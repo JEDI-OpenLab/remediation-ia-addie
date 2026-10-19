@@ -19,24 +19,9 @@ Point fragile : la validation reposait sur un échantillon. Une partie des feed
 
 La chaîne complète, de la copie au message :
 
-```mermaid
-flowchart TD
-    Prod["Productions des élèves<br/>en classe ou à distance"] --> Pseudo["Pseudonymisation<br/>numéros, infos personnelles retirées"]
-    Pseudo --> Trans["Transcription des manuscrits<br/>vérifiée par échantillon"]
-    Trans --> IA["IA : grille + document source<br/>+ productions"]
-    IA --> FE["Fichiers élèves<br/>texte annoté, critères,<br/>Well done, Next time"]
-    IA --> NC["Note confidentielle<br/>pour l'enseignant·e seulement"]
-    FE --> Cal{"Calibrage<br/>3 copies de niveaux<br/>différents"}
-    Cal -->|"seuils à ajuster"| IA
-    Cal -->|"ok"| Val["Validation de chaque fichier<br/>checklist, 2 à 3 min"]
-    NC --> Sens["Cas sensibles<br/>entretien, réponse humaine"]
-    Val --> Env(["Envoi par l'enseignant·e"])
+![Parcours d'une copie en trois couloirs : l'élève produit, l'IA prépare le feedback et une note confidentielle, l'enseignant·e calibre, valide et envoie ; l'élève réécrit en classe. Aucun élément ne va de l'IA à l'élève sans validation de l'enseignant·e.](schemas/01-vie-d-une-copie.svg)
 
-    classDef conf fill:#fbe4e4,stroke:#a33,color:#1a1a1a
-    classDef ok fill:#e3f4e6,stroke:#2e7d4a,color:#1a1a1a
-    class NC,Sens conf
-    class Env ok
-```
+*La note confidentielle (en rouge) ne rejoint jamais le fichier de l'élève. La flèche en pointillé est le calibrage : si les seuils sont ajustés, l'IA régénère tout le lot.*
 
 ### 1. Faire produire en classe
 

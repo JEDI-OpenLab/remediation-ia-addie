@@ -4,6 +4,8 @@
 
 Le fichier a deux parties : le texte de l'élève annoté, puis l'évaluation en lignes simples, sans tableau, pour pouvoir la copier dans un message.
 
+![Maquette d'un fichier de feedback : le texte de l'élève annoté, une ligne par critère, une réussite nommée et une priorité. Les annotations relient chaque partie aux trois questions du feedback efficace.](../schemas/02-anatomie-feedback.svg)
+
 L'exemple ci-dessous est **entièrement fictif**.
 
 ## Version correction directe (élève en difficulté sur la langue)

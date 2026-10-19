@@ -1,0 +1,43 @@
+---
+import Default from '@astrojs/starlight/components/Head.astro';
+---
+
+<Default />
+
+<script>
+	// Schémas Mermaid conservés dans le guide : rendus dans le navigateur,
+	// aux couleurs des rôles (orange enseignant·e, bleu IA, vert élève).
+	const blocks = document.querySelectorAll<HTMLElement>('pre.mermaid');
+	if (blocks.length) {
+		const { default: mermaid } = await import('mermaid');
+		mermaid.initialize({
+			startOnLoad: false,
+			theme: 'base',
+			fontFamily: getComputedStyle(document.documentElement).getPropertyValue('--__sl-font') || 'system-ui, sans-serif',
+			themeVariables: {
+				fontSize: '16px',
+				primaryColor: '#ffffff',
+				primaryBorderColor: '#6b6b6b',
+				primaryTextColor: '#1a1a1a',
+				lineColor: '#6b6b6b',
+				edgeLabelBackground: '#ffffff',
+			},
+			flowchart: { curve: 'basis', padding: 14 },
+		});
+		await mermaid.run({ nodes: blocks });
+	}
+
+	// Checklists du guide : cochables, mémorisées dans ce navigateur.
+	document.querySelectorAll<HTMLInputElement>('.sl-markdown-content input[type="checkbox"]').forEach((box, i) => {
+		const key = `ria-addie:${location.pathname}:${i}`;
+		box.disabled = false;
+		try {
+			box.checked = localStorage.getItem(key) === '1';
+		} catch {}
+		box.addEventListener('change', () => {
+			try {
+				localStorage.setItem(key, box.checked ? '1' : '0');
+			} catch {}
+		});
+	});
+</script>

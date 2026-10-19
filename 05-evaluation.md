@@ -14,20 +14,7 @@ Le cas prévoyait une boucle : chaque élève reprend sa production à partir d
 
 Deux boucles s'emboîtent : celle de l'élève, d'une production à la suivante, et celle du dispositif, d'une séquence à la suivante.
 
-```mermaid
-flowchart LR
-    subgraph eleve["Boucle de l'élève"]
-        P1["Production n"] --> FB["Feedback<br/>Next time"]
-        FB --> R["Réécriture<br/>en classe"]
-        R --> P2["Production n+1<br/>la priorité est-elle reprise ?"]
-        P2 -.-> P1
-    end
-    subgraph disp["Boucle du dispositif"]
-        Ind["Indicateurs<br/>reprise, réécriture,<br/>fidélité, temps"] --> Aj["Ajustements<br/>grille, critères de refus,<br/>priorités de classe"]
-    end
-    P2 --> Ind
-    Aj --> Seq["Séquence suivante<br/>retour à l'Analyse"]
-```
+![Deux boucles emboîtées : la boucle de l'élève, d'une production à la suivante, et la boucle du dispositif, d'une séquence à la suivante, nourrie par les indicateurs.](schemas/04-double-boucle.svg)
 
 ### 1. Boucler en classe
 

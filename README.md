@@ -2,6 +2,10 @@
 
 > Comment personnaliser la remédiation pour chaque élève alors que le temps de correction rend la personnalisation impraticable ?
 
+![Parcours d'une copie en trois couloirs : l'élève produit, l'IA prépare le feedback et une note confidentielle, l'enseignant·e calibre, valide et envoie ; l'élève réécrit en classe. Aucun élément ne va de l'IA à l'élève sans validation de l'enseignant·e.](schemas/01-vie-d-une-copie.svg)
+
+*La vie d'une copie : l'élève produit, l'IA prépare, l'enseignant·e calibre, valide et envoie. Aucune flèche ne va de l'IA à l'élève sans passer par l'enseignant·e.*
+
 Ce dépôt propose une **relecture ADDIE d'un retour d'expérience réel** : une séquence d'anglais en Terminale, conçue et corrigée par un·e enseignant·e avec l'aide d'une IA générative, jusqu'à un feedback individuel pour chaque élève de la classe.
 
 L'objectif n'est pas de raconter un usage de l'IA, mais d'en tirer une démarche **réutilisable**, en langues vivantes comme dans toute discipline où les élèves produisent un écrit évalué sur critères.
@@ -16,21 +20,7 @@ L'objectif n'est pas de raconter un usage de l'IA, mais d'en tirer une démarche
 
 ADDIE (Analyse, Design, Développement, Implémentation, Évaluation) est le modèle le plus répandu en ingénierie pédagogique. On lui reproche à juste titre d'être linéaire et lourd. Le cas étudié montre justement une version **itérative** du modèle : trois versions d'une même séance produites en une heure, deux écartées, une adoptée. L'évaluation formative traverse toutes les phases au lieu d'attendre la fin.
 
-```mermaid
-flowchart LR
-    A["1. Analyse<br/>besoins, contraintes,<br/>cadre des données"] --> D["2. Design<br/>problématique, grille,<br/>format du feedback"]
-    D --> Dev["3. Développement<br/>supports produits avec l'IA,<br/>filtrés par l'enseignant·e"]
-    Dev --> I["4. Implémentation<br/>production, correction,<br/>feedback validé"]
-    I --> E["5. Évaluation<br/>le feedback a-t-il servi ?"]
-    E -->|"priorités et ajustements<br/>pour la séquence suivante"| A
-    Dev -.->|"version refusée"| D
-    I -.->|"seuils recalibrés"| Dev
-
-    classDef ia fill:#e8f0fe,stroke:#4a6fa5,color:#1a1a1a
-    classDef humain fill:#fdf1e3,stroke:#b5762a,color:#1a1a1a
-    class A,D,E humain
-    class Dev,I ia
-```
+![Cycle ADDIE en cinq phases : Analyse, Design, Développement, Implémentation, Évaluation. L'enseignant·e décide en Analyse, Design et Évaluation ; l'IA produit sous son contrôle en Développement et Implémentation. Des retours en pointillé montrent les itérations : version refusée, seuils recalibrés, séquence suivante.](schemas/08-cycle-addie.svg)
 
 *En orange, les phases où la décision appartient entièrement à l'enseignant·e ; en bleu, celles où l'IA produit et où l'enseignant·e filtre et valide. Les flèches en pointillé sont les itérations observées dans le cas.*
 
@@ -65,11 +55,24 @@ remediation-ia-addie/
 │   ├── modele-feedback.md       format du fichier individuel
 │   ├── checklist-validation.md  relecture avant envoi
 │   └── suivi-priorites.md       suivi des priorités de chaque élève
+├── schemas/                     schémas SVG (sources dans schemas/src/)
 ├── references.md
-└── LICENSE
+├── LICENSE
+└── src/, scripts/, astro.config.mjs   le site web (voir ci-dessous)
 ```
 
 Chaque fichier de phase suit le même plan : **dans le cas** (ce qui s'est passé), **recommandations** (ce qu'on propose de faire), **outils** (les gabarits à utiliser), **points de vigilance**, et une **checklist de sortie** pour passer à la phase suivante.
+
+## Le site
+
+Le guide est aussi publié sous forme de site, avec une roue ADDIE interactive et les schémas : https://jedi-openlab.github.io/remediation-ia-addie/
+
+Les fichiers Markdown de ce dépôt restent la seule source. Le site les reprend à chaque construction (`scripts/sync-content.mjs`) et les schémas SVG sont générés à partir de `schemas/src/`. Pour le lancer en local (Node.js 22.12 ou plus) :
+
+```bash
+npm install
+npm run dev
+```
 
 ## Trois façons d'utiliser ce dépôt
 
@@ -82,6 +85,8 @@ Chaque fichier de phase suit le même plan : **dans le cas** (ce qui s'est pass
 - Un outil d'IA capable de lire des documents et des images et de produire des fichiers, **validé par l'établissement** pour traiter des productions d'élèves (voir [Analyse](01-analyse.md)).
 - Une tâche de production écrite évaluée sur critères.
 - Un·e enseignant·e qui reste décisionnaire à chaque phase. L'IA prépare ; l'enseignant·e décide, valide et envoie.
+
+![Répartition des tâches : l'IA transcrit, corrige, applique la grille et signale ; l'enseignant·e fixe la grille, calibre, tranche, valide et envoie.](schemas/03-qui-fait-quoi.svg)
 
 ## Anonymisation
 

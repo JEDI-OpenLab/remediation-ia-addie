@@ -1,0 +1,292 @@
+---
+// Roue ADDIE interactive : même géométrie que le schéma n° 8 (schemas/src/cycle-addie.mjs).
+// Un clic (ou Entrée) sur une phase affiche son résumé à côté de la roue.
+import { PHASES, angleOf } from '../../../schemas/src/cycle-addie.mjs';
+import { sector, polar } from '../../../schemas/src/lib.mjs';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const details = [
+	{
+		slug: 'analyse',
+		question: 'De quoi les élèves ont-ils besoin, et dans quelles conditions réelles va-t-on travailler ?',
+		cas: "Programme, contraintes horaires, travail à distance, risque d'usage de l'IA par les élèves.",
+		ajout: 'Un diagnostic explicite des besoins ; le cadre de protection des données posé dès le départ.',
+	},
+	{
+		slug: 'design',
+		question: 'Quels objectifs, quelles tâches, quels critères, et quel feedback ?',
+		cas: 'Une problématique, une sous-question par semaine, une grille annoncée, des notes bonus.',
+		ajout: 'Une grille avec descripteurs de niveau ; un feedback modulé selon les élèves.',
+	},
+	{
+		slug: 'developpement',
+		question: "Comment produire avec l'IA des supports simples, justes et utilisables en classe ?",
+		cas: "Supports produits avec l'IA, versions refusées, vérification des contenus.",
+		ajout: 'Des critères de refus explicites ; la vérification des sources comme règle.',
+	},
+	{
+		slug: 'implementation',
+		question: "Comment faire produire, collecter, corriger avec l'IA et envoyer un feedback qu'on a validé ?",
+		cas: 'Production en classe, collecte, feedback individuel envoyé à chaque élève.',
+		ajout: 'Une checklist de validation de chaque fichier avant envoi.',
+	},
+	{
+		slug: 'evaluation',
+		question: 'Le dispositif a-t-il servi aux élèves, et que faut-il changer pour la prochaine fois ?',
+		cas: 'Boucle de classe (Error Hunt, priorités reprises).',
+		ajout: 'Des indicateurs pour évaluer le dispositif lui-même.',
+	},
+];
+const who = {
+	ens: "L'enseignant·e décide",
+	ia: "L'IA produit, l'enseignant·e filtre et valide",
+};
+
+const cx = 300;
+const cy = 300;
+const r0 = 96;
+const r1 = 280;
+const phases = PHASES.map((p, i) => {
+	const a = angleOf(i);
+	const [tx, ty] = polar(cx, cy, (r0 + r1) / 2 + 4, a);
+	const [hx, hy] = polar(cx, cy, (r0 + r1) / 2, a + 36);
+	return { ...p, ...details[i], d: sector(cx, cy, r0, r1, a - 34.5, a + 34.5), tx, ty, hx, hy, rot: a + 36 + 90 };
+});
+---
+
+<div class="wheel">
+	<svg viewBox="0 0 600 600" role="group" aria-label="Les cinq phases ADDIE : choisissez une phase">
+		{
+			phases.map((p, i) => (
+				<g
+					class={`phase phase--${p.role}`}
+					data-i={i}
+					tabindex="0"
+					role="button"
+					aria-pressed={i === 0 ? 'true' : 'false'}
+					aria-label={`${p.n}. ${p.name}`}
+				>
+					<path d={p.d} />
+					<text x={p.tx} y={p.ty - 8} text-anchor="middle" class="phase-num">{p.n}</text>
+					<text x={p.tx} y={p.ty + 18} text-anchor="middle" class="phase-name">{p.name}</text>
+				</g>
+			))
+		}
+		{
+			phases.map((p) => (
+				<g transform={`translate(${p.hx.toFixed(1)} ${p.hy.toFixed(1)}) rotate(${p.rot})`} class="chevron" aria-hidden="true">
+					<circle r="12" />
+					<path d="M-3.5,-5 L3,0 L-3.5,5" />
+				</g>
+			))
+		}
+		<text x={cx} y={cy - 6} text-anchor="middle" class="center-a">ADDIE</text>
+		<text x={cx} y={cy + 18} text-anchor="middle" class="center-b">itératif</text>
+	</svg>
+
+	<div class="panels">
+		{
+			phases.map((p, i) => (
+				<article class="panel" data-i={i} hidden={i !== 0}>
+					<p class={`who who--${p.role}`}>{who[p.role]}</p>
+					<h3>
+						{p.n}. {p.name}
+					</h3>
+					<p class="question">{p.question}</p>
+					<dl>
+						<dt>Dans le cas</dt>
+						<dd>{p.cas}</dd>
+						<dt>Ce que le guide ajoute</dt>
+						<dd>{p.ajout}</dd>
+					</dl>
+					<a class="go" href={`${base}/${p.slug}/`}>
+						Lire la phase {p.name} <span aria-hidden="true">→</span>
+					</a>
+				</article>
+			))
+		}
+		<p class="hint">Cliquez sur une phase de la roue.</p>
+	</div>
+</div>
+
+<script>
+	document.querySelectorAll<HTMLElement>('.wheel').forEach((wheel) => {
+		const phases = wheel.querySelectorAll<SVGGElement>('.phase');
+		const panels = wheel.querySelectorAll<HTMLElement>('.panel');
+		const select = (i: number) => {
+			phases.forEach((p, k) => p.setAttribute('aria-pressed', String(k === i)));
+			panels.forEach((p, k) => (p.hidden = k !== i));
+		};
+		phases.forEach((p, i) => {
+			p.addEventListener('click', () => select(i));
+			p.addEventListener('keydown', (e) => {
+				if (e.key === 'Enter' || e.key === ' ') {
+					e.preventDefault();
+					select(i);
+				}
+				if (e.key === 'ArrowRight' || e.key === 'ArrowDown') phases[(i + 1) % phases.length].focus();
+				if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') phases[(i + phases.length - 1) % phases.length].focus();
+			});
+		});
+	});
+</script>
+
+<style>
+	.wheel {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+		gap: 2.5rem;
+		align-items: center;
+	}
+	@media (max-width: 50rem) {
+		.wheel {
+			grid-template-columns: 1fr;
+		}
+	}
+	svg {
+		width: 100%;
+		max-width: 30rem;
+		margin-inline: auto;
+		display: block;
+		overflow: visible;
+	}
+	.phase {
+		cursor: pointer;
+		outline: none;
+	}
+	.phase path {
+		stroke-width: 2;
+		transition: transform 0.2s ease, filter 0.2s ease;
+		transform-origin: 300px 300px;
+	}
+	.phase--ens path {
+		fill: var(--ens-f);
+		stroke: var(--ens-s);
+	}
+	.phase--ia path {
+		fill: var(--ia-f);
+		stroke: var(--ia-s);
+	}
+	.phase text {
+		pointer-events: none;
+	}
+	.phase-num {
+		font-size: 30px;
+		font-weight: 800;
+		opacity: 0.55;
+	}
+	.phase--ens text {
+		fill: var(--ens-t);
+	}
+	.phase--ia text {
+		fill: var(--ia-t);
+	}
+	.phase-name {
+		font-size: 19px;
+		font-weight: 700;
+	}
+	.phase:hover path,
+	.phase:focus-visible path {
+		transform: scale(1.03);
+	}
+	.phase:focus-visible path {
+		stroke-width: 4;
+	}
+	.phase[aria-pressed='true'] path {
+		transform: scale(1.05);
+		stroke-width: 4;
+		filter: drop-shadow(0 6px 10px rgb(0 0 0 / 0.18));
+	}
+	.chevron circle {
+		fill: var(--sl-color-bg);
+		stroke: var(--sl-color-gray-4);
+		stroke-width: 1.5;
+	}
+	.chevron path {
+		fill: none;
+		stroke: var(--sl-color-white);
+		stroke-width: 2.4;
+		stroke-linecap: round;
+		stroke-linejoin: round;
+	}
+	.center-a {
+		font-size: 26px;
+		font-weight: 800;
+		fill: var(--sl-color-white);
+		letter-spacing: 0.08em;
+	}
+	.center-b {
+		font-size: 16px;
+		fill: var(--sl-color-gray-3);
+	}
+	.panel {
+		border: 1px solid var(--sl-color-gray-5);
+		border-radius: 1rem;
+		padding: 1.5rem 1.75rem;
+		background: var(--sl-color-bg-nav);
+		animation: rise 0.25s ease;
+	}
+	@keyframes rise {
+		from {
+			opacity: 0;
+			transform: translateY(6px);
+		}
+	}
+	@media (prefers-reduced-motion: reduce) {
+		.panel {
+			animation: none;
+		}
+		.phase path {
+			transition: none;
+		}
+	}
+	.panel h3 {
+		margin: 0.25rem 0 0.5rem;
+		font-size: var(--sl-text-2xl);
+	}
+	.who {
+		display: inline-block;
+		margin: 0;
+		font-size: var(--sl-text-xs);
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.06em;
+		padding: 0.2rem 0.6rem;
+		border-radius: 999px;
+	}
+	.who--ens {
+		background: var(--ens-f);
+		color: var(--ens-t);
+	}
+	.who--ia {
+		background: var(--ia-f);
+		color: var(--ia-t);
+	}
+	.question {
+		font-size: var(--sl-text-lg);
+		font-weight: 600;
+		color: var(--sl-color-white);
+	}
+	dl {
+		margin: 1rem 0;
+	}
+	dt {
+		font-size: var(--sl-text-sm);
+		font-weight: 700;
+		color: var(--sl-color-gray-3);
+		text-transform: uppercase;
+		letter-spacing: 0.04em;
+		margin-top: 0.75rem;
+	}
+	dd {
+		margin: 0.2rem 0 0;
+	}
+	.go {
+		font-weight: 700;
+	}
+	.hint {
+		margin-top: 0.75rem;
+		font-size: var(--sl-text-sm);
+		color: var(--sl-color-gray-3);
+	}
+</style>

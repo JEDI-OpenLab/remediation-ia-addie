@@ -1,0 +1,392 @@
+---
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+import AddieWheel from '../components/home/AddieWheel.astro';
+import FeedbackProfiles from '../components/home/FeedbackProfiles.astro';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const u = (p: string) => `${base}/${p}`;
+
+const stats = [
+	{ n: '≈ 20', l: 'élèves, un feedback individuel chacun' },
+	{ n: '≈ 30', l: "demandes à l'IA sur toute la séquence" },
+	{ n: '3', l: 'versions d’une séance en une heure, une seule retenue' },
+	{ n: '2 à 3 min', l: 'de validation par fichier, contre 10 à 15 à la main' },
+];
+
+const fragiles = [
+	{ t: 'Des notes élevées', d: 'Le statut bonus et des critères qui récompensent la présence plus que la qualité.', p: 'design' },
+	{ t: 'Une correction exhaustive', d: "Tout corriger vide en partie la réécriture de son intérêt.", p: 'design' },
+	{ t: 'Une validation par échantillon', d: 'Seuls quelques fichiers ont été relus avant envoi.', p: 'implementation' },
+	{ t: 'Des copies en ligne', d: "Des productions d'élèves, parfois très personnelles, ont transité par un outil en ligne.", p: 'analyse' },
+	{ t: 'Un effet non mesuré', d: 'Rien ne dit encore si le feedback a été lu et utilisé.', p: 'evaluation' },
+];
+
+const gabarits = [
+	{ t: 'Consignes pour l’IA', d: 'Une consigne par étape, de l’analyse à la boucle de classe.', p: 'gabarits/prompts' },
+	{ t: 'Grille critériée', d: 'Six critères, quatre niveaux, des descripteurs observables.', p: 'gabarits/grille-criteriee' },
+	{ t: 'Modèle de feedback', d: 'Le fichier individuel, en correction directe ou indirecte.', p: 'gabarits/modele-feedback' },
+	{ t: 'Checklist de validation', d: 'Deux à trois minutes par fichier, avant envoi.', p: 'gabarits/checklist-validation' },
+	{ t: 'Suivi des priorités', d: 'Le tableau qui dit si le feedback a servi.', p: 'gabarits/suivi-priorites' },
+];
+---
+
+<StarlightPage
+	frontmatter={{
+		title: 'Remédiation personnalisée assistée par IA',
+		description:
+			"Guide ouvert tiré d'un retour d'expérience : concevoir, corriger et faire un feedback individuel avec une IA, relus avec le modèle ADDIE.",
+		template: 'splash',
+		pagefind: false,
+	}}
+	hasSidebar={false}
+>
+	<div class="home not-content">
+		<section class="hero">
+			<p class="eyebrow">Guide ouvert · JEDI-OpenLab · une relecture ADDIE</p>
+			<h1>Remédiation personnalisée <span>assistée par IA</span></h1>
+			<blockquote>
+				Comment personnaliser la remédiation pour chaque élève alors que le temps de correction rend la personnalisation impraticable ?
+			</blockquote>
+			<p class="lede">
+				Une séquence d'anglais en Terminale, conçue et corrigée avec une IA générative, jusqu'à un feedback individuel pour chaque élève.
+				Relue avec le modèle ADDIE pour en tirer une démarche réutilisable dans toute discipline où les élèves écrivent sur critères.
+			</p>
+			<div class="ctas">
+				<a class="btn primary" href={u('retour-experience/')}>Lire le cas</a>
+				<a class="btn" href="#cycle">Explorer les cinq phases</a>
+				<a class="btn" href={u('gabarits/prompts/')}>Utiliser les gabarits</a>
+			</div>
+			<ul class="stats">
+				{
+					stats.map((s) => (
+						<li>
+							<strong>{s.n}</strong>
+							<span>{s.l}</span>
+						</li>
+					))
+				}
+			</ul>
+		</section>
+
+		<section>
+			<p class="kicker">Le schéma phare</p>
+			<h2>La vie d'une copie</h2>
+			<p class="intro">
+				L'IA prépare, l'enseignant·e décide. Les trois couloirs le rendent visible : le couloir de l'enseignant·e est placé entre celui de
+				l'IA et celui de l'élève, et <strong>aucune flèche ne va de l'IA à l'élève sans passer par l'enseignant·e</strong>.
+			</p>
+			<figure class="schema wide">
+				<a href={u('schemas/01-vie-d-une-copie.svg')} target="_blank" rel="noopener" title="Ouvrir le schéma en grand">
+					<img
+						src={u('schemas/01-vie-d-une-copie.svg')}
+						alt="Parcours d'une copie en trois couloirs : l'élève produit, l'IA prépare le feedback et une note confidentielle, l'enseignant·e calibre, valide et envoie ; l'élève réécrit en classe. Aucun élément ne va de l'IA à l'élève sans validation de l'enseignant·e."
+					/>
+				</a>
+			</figure>
+			<ol class="keys">
+				<li><b>Pseudonymiser</b> avant tout envoi : l'IA ne voit que des numéros.</li>
+				<li><b>Deux sorties séparées</b> : le fichier de l'élève et une note confidentielle, qui ne se rejoignent jamais.</li>
+				<li><b>Calibrer, puis valider</b> chaque fichier : deux à trois minutes, et c'est l'enseignant·e qui envoie.</li>
+			</ol>
+		</section>
+
+		<section id="cycle">
+			<p class="kicker">Le guide en cinq phases</p>
+			<h2>Un ADDIE itératif</h2>
+			<p class="intro">
+				En orange, les phases où la décision appartient entièrement à l'enseignant·e ; en bleu, celles où l'IA produit et où l'enseignant·e
+				filtre et valide.
+			</p>
+			<AddieWheel />
+		</section>
+
+		<section class="split">
+			<div>
+				<p class="kicker">Qui fait quoi</p>
+				<h2>L'IA prépare, l'enseignant·e décide</h2>
+				<p class="intro">Chaque tâche préparée par l'IA aboutit à une décision de l'enseignant·e. La dernière ligne n'a pas de tâche en face : l'IA ne s'adresse jamais à l'élève.</p>
+				<a class="more" href={u('presentation/#prérequis')}>Voir les prérequis →</a>
+			</div>
+			<figure class="schema">
+				<a href={u('schemas/03-qui-fait-quoi.svg')} target="_blank" rel="noopener" title="Ouvrir le schéma en grand">
+					<img
+						src={u('schemas/03-qui-fait-quoi.svg')}
+						alt="Répartition des tâches : l'IA transcrit, corrige, applique la grille et signale ; l'enseignant·e fixe la grille, calibre, tranche, valide et envoie."
+					/>
+				</a>
+			</figure>
+		</section>
+
+		<section>
+			<p class="kicker">Concevoir le feedback</p>
+			<h2>Ne pas tout corriger pour tout le monde</h2>
+			<p class="intro">
+				La correction directe aide surtout les élèves les plus fragiles. Pour les autres, la correction indirecte les oblige à chercher, et
+				c'est cette recherche qui fait progresser. Choisissez un profil :
+			</p>
+			<FeedbackProfiles />
+			<a class="more" href={u('design/#5-concevoir-le-feedback')}>Concevoir le feedback, phase Design →</a>
+		</section>
+
+		<section>
+			<p class="kicker">Ce qui reste fragile</p>
+			<h2>Cinq questions ouvertes par le cas</h2>
+			<ol class="cards five">
+				{
+					fragiles.map((f, i) => (
+						<li>
+							<a href={u(`${f.p}/`)}>
+								<span class="num">{i + 1}</span>
+								<strong>{f.t}</strong>
+								<span>{f.d}</span>
+								<em>→ {f.p === 'implementation' ? 'Implémentation' : f.p === 'evaluation' ? 'Évaluation' : f.p.charAt(0).toUpperCase() + f.p.slice(1)}</em>
+							</a>
+						</li>
+					))
+				}
+			</ol>
+		</section>
+
+		<section>
+			<p class="kicker">Boîte à outils</p>
+			<h2>Les gabarits, prêts à adapter</h2>
+			<ul class="cards">
+				{
+					gabarits.map((g) => (
+						<li>
+							<a href={u(`${g.p}/`)}>
+								<strong>{g.t}</strong>
+								<span>{g.d}</span>
+							</a>
+						</li>
+					))
+				}
+			</ul>
+		</section>
+
+		<footer class="license">
+			Contenus sous licence <a href="https://creativecommons.org/licenses/by/4.0/deed.fr">CC BY 4.0</a>. Étude de cas unique, anonymisée : aucun
+			extrait de copie réelle n'est reproduit. <a href={u('presentation/#licence-et-citation')}>Citer ce guide</a>.
+		</footer>
+	</div>
+</StarlightPage>
+
+<style>
+	/* Le titre de page Starlight fait doublon avec le h1 de l'en-tête */
+	:global(.content-panel:has(h1#_top)) {
+		display: none;
+	}
+	:global(.content-panel:has(h1#_top) + .content-panel) {
+		border-top: 0;
+	}
+	.home {
+		max-width: 72rem;
+		margin-inline: auto;
+	}
+	section {
+		margin-block: 4.5rem;
+	}
+	.hero {
+		margin-top: 1.5rem;
+	}
+	.eyebrow,
+	.kicker {
+		font-size: var(--sl-text-sm);
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.08em;
+		color: var(--sl-color-accent);
+		margin: 0 0 0.5rem;
+	}
+	h1 {
+		font-size: clamp(2.2rem, 5vw, 3.6rem);
+		line-height: 1.08;
+		margin: 0;
+		color: var(--sl-color-white);
+		letter-spacing: -0.02em;
+	}
+	h1 span {
+		display: block;
+		color: var(--ia-s);
+	}
+	h2 {
+		font-size: clamp(1.6rem, 3vw, 2.2rem);
+		margin: 0 0 0.75rem;
+		color: var(--sl-color-white);
+		letter-spacing: -0.01em;
+	}
+	blockquote {
+		margin: 1.5rem 0 1rem;
+		padding-left: 1rem;
+		border-left: 4px solid var(--ens-s);
+		font-size: var(--sl-text-xl);
+		font-style: italic;
+		color: var(--sl-color-white);
+		max-width: 46rem;
+	}
+	.lede,
+	.intro {
+		max-width: 46rem;
+		color: var(--sl-color-gray-2);
+		font-size: var(--sl-text-lg);
+		line-height: 1.6;
+	}
+	.ctas {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.75rem;
+		margin-top: 1.5rem;
+	}
+	.btn {
+		padding: 0.7rem 1.3rem;
+		border-radius: 999px;
+		border: 1px solid var(--sl-color-gray-4);
+		color: var(--sl-color-white);
+		text-decoration: none;
+		font-weight: 600;
+	}
+	.btn:hover {
+		border-color: var(--sl-color-accent);
+	}
+	.btn.primary {
+		background: var(--sl-color-accent);
+		border-color: var(--sl-color-accent);
+		color: var(--sl-color-black);
+	}
+	.stats {
+		list-style: none;
+		padding: 0;
+		margin: 2.5rem 0 0;
+		display: grid;
+		grid-template-columns: repeat(4, minmax(0, 1fr));
+		gap: 1rem;
+	}
+	@media (max-width: 50rem) {
+		.stats {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+		}
+	}
+	.stats li {
+		border-top: 3px solid var(--sl-color-gray-5);
+		padding-top: 0.75rem;
+		display: flex;
+		flex-direction: column;
+		gap: 0.25rem;
+	}
+	.stats li:last-child {
+		border-color: var(--ia-s);
+	}
+	.stats strong {
+		font-size: var(--sl-text-3xl);
+		color: var(--sl-color-white);
+		line-height: 1.1;
+	}
+	.stats span {
+		color: var(--sl-color-gray-3);
+		font-size: var(--sl-text-sm);
+	}
+	.keys {
+		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: 1rem;
+		padding: 0;
+		list-style: none;
+		counter-reset: k;
+		margin-top: 1.5rem;
+	}
+	@media (max-width: 50rem) {
+		.keys {
+			grid-template-columns: 1fr;
+		}
+	}
+	.keys li {
+		counter-increment: k;
+		padding: 1rem 1.25rem;
+		border-radius: 0.75rem;
+		background: var(--sl-color-bg-nav);
+		border: 1px solid var(--sl-color-gray-5);
+		color: var(--sl-color-gray-2);
+	}
+	.keys li::before {
+		content: counter(k);
+		display: inline-grid;
+		place-items: center;
+		width: 1.6rem;
+		height: 1.6rem;
+		border-radius: 50%;
+		background: var(--ens-s);
+		color: #fff;
+		font-weight: 700;
+		margin-right: 0.5rem;
+	}
+	.keys b {
+		color: var(--sl-color-white);
+	}
+	.split {
+		display: grid;
+		grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+		gap: 2.5rem;
+		align-items: center;
+	}
+	@media (max-width: 50rem) {
+		.split {
+			grid-template-columns: 1fr;
+		}
+	}
+	.more {
+		display: inline-block;
+		margin-top: 1rem;
+		font-weight: 700;
+	}
+	.cards {
+		list-style: none;
+		padding: 0;
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr));
+		gap: 1rem;
+	}
+	.cards a {
+		display: flex;
+		flex-direction: column;
+		gap: 0.4rem;
+		height: 100%;
+		padding: 1.25rem;
+		border-radius: 0.9rem;
+		border: 1px solid var(--sl-color-gray-5);
+		background: var(--sl-color-bg-nav);
+		text-decoration: none;
+		color: var(--sl-color-gray-2);
+		transition: border-color 0.15s, transform 0.15s;
+	}
+	.cards a:hover {
+		border-color: var(--sl-color-accent);
+		transform: translateY(-2px);
+	}
+	.cards strong {
+		color: var(--sl-color-white);
+		font-size: var(--sl-text-lg);
+	}
+	.cards em {
+		margin-top: auto;
+		font-style: normal;
+		font-weight: 700;
+		color: var(--sl-color-accent);
+	}
+	.five .num {
+		width: 2rem;
+		height: 2rem;
+		border-radius: 50%;
+		display: grid;
+		place-items: center;
+		background: var(--conf-f);
+		color: var(--conf-t);
+		font-weight: 800;
+	}
+	.license {
+		border-top: 1px solid var(--sl-color-gray-5);
+		padding-top: 1.5rem;
+		margin-bottom: 3rem;
+		color: var(--sl-color-gray-3);
+		font-size: var(--sl-text-sm);
+	}
+</style>

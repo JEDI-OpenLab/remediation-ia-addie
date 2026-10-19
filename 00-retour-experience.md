@@ -59,24 +59,15 @@ Chaque élève a reçu un fichier individuel :
 - le total ;
 - une ligne **Well done** (une réussite nommée) et une ligne **Next time** (une ou deux priorités).
 
+![Trois niveaux d'adaptation : différencier selon des profils, individualiser par groupes de besoin, personnaliser pour chaque élève, le plus coûteux en temps et celui que l'IA rend accessible.](schemas/06-differencier-individualiser-personnaliser.svg)
+
+*Personnaliser, c'est-à-dire répondre à chaque élève sur son propre texte, était hors de portée à la main. L'IA le rend possible, à condition que l'enseignant·e valide chaque fichier.*
+
 L'enseignant·e a demandé un format sans tableau, pour pouvoir le copier dans un message : le feedback devient un message adressé à l'élève, pas un document administratif.
 
 Séparément, et pour l'enseignant·e seulement, l'IA signalait les erreurs les plus fréquentes, les contenus inventés, les copies qui semblaient aidées et les textes abordant un thème personnel sensible. Rien de cela n'apparaissait dans les fichiers des élèves.
 
-```mermaid
-sequenceDiagram
-    participant E as Élèves
-    participant P as Enseignant·e
-    participant IA as IA
-    E->>P: productions (texte ou photo)
-    P->>IA: grille, document source, productions
-    IA->>IA: transcrit, corrige, applique la grille
-    IA-->>P: un fichier par élève
-    IA-->>P: note confidentielle (erreurs fréquentes,<br/>contenus inventés, cas sensibles)
-    P->>P: calibre, ajuste, tranche les cas sensibles
-    P->>E: message individuel (Well done, Next time)
-    P->>E: boucle de classe (Error Hunt, réécriture)
-```
+![Parcours d'une copie en trois couloirs : l'élève produit, l'IA prépare le feedback et une note confidentielle, l'enseignant·e calibre, valide et envoie ; l'élève réécrit en classe. Aucun élément ne va de l'IA à l'élève sans validation de l'enseignant·e.](schemas/01-vie-d-une-copie.svg)
 
 L'enseignant·e a gardé le calibrage (des notes ont été contestées, affinées ou confirmées), la décision sur les cas sensibles, l'envoi des messages et la boucle de classe : lecture d'extraits réussis, travail collectif sur les erreurs fréquentes, réécriture.
 

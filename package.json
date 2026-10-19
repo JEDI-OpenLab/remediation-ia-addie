@@ -1,0 +1,17 @@
+{
+  "name": "remediation-ia-addie",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "schemas": "node schemas/src/build.mjs",
+    "sync": "node scripts/sync-content.mjs",
+    "dev": "npm run schemas && npm run sync && astro dev",
+    "build": "npm run schemas && npm run sync && astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "@astrojs/starlight": "^0.39.3",
+    "astro": "^6.4.8",
+    "mermaid": "^12.2.0"
+  }
+}

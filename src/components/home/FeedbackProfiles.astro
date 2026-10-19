@@ -1,0 +1,202 @@
+---
+// Le curseur de correction (schéma n° 5) en version interactive :
+// la même phrase d'élève, corrigée de trois façons selon le profil.
+// Exemple fictif, repris de gabarits/modele-feedback.md.
+const profiles = [
+	{
+		id: 'directe',
+		label: 'En difficulté',
+		type: 'Correction directe',
+		how: 'Erreur barrée, correction donnée.',
+		does: "Recopie le passage corrigé et l'explique.",
+		effort: 1,
+		html: 'Yesterday we <del>watch</del> <ins>watched</ins> a short film. If I <del>am</del> <ins>were</ins> him, I would stop <del>to buy</del> <ins>buying</ins> things.',
+	},
+	{
+		id: 'mixte',
+		label: 'Intermédiaire',
+		type: 'Correction mixte',
+		how: 'Directe sur les erreurs hors programme, codée sur la structure étudiée.',
+		does: 'Corrige seul·e les erreurs signalées.',
+		effort: 2,
+		html: 'Yesterday we <del>watch</del> <ins>watched</ins> a short film. If I <u>am</u><b class="code">[S]</b> him, I would stop <del>to buy</del> <ins>buying</ins> things.',
+	},
+	{
+		id: 'indirecte',
+		label: 'Avancé·e',
+		type: 'Correction indirecte',
+		how: 'Erreur soulignée et codée, sans la réponse.',
+		does: 'Corrige seul·e et justifie.',
+		effort: 3,
+		html: 'Yesterday we <u>watch</u><b class="code">[T]</b> a short film. If I <u>am</u><b class="code">[S]</b> him, I would stop <u>to buy</u><b class="code">[O]</b> things.',
+	},
+];
+---
+
+<div class="profiles">
+	<div class="tabs" role="tablist" aria-label="Profil de l'élève">
+		{
+			profiles.map((p, i) => (
+				<button role="tab" id={`tab-${p.id}`} aria-controls={`pane-${p.id}`} aria-selected={i === 0 ? 'true' : 'false'} tabindex={i === 0 ? 0 : -1}>
+					<span class="dot" aria-hidden="true" />
+					Élève {p.label.toLowerCase()}
+				</button>
+			))
+		}
+	</div>
+	{
+		profiles.map((p, i) => (
+			<div class="pane" role="tabpanel" id={`pane-${p.id}`} aria-labelledby={`tab-${p.id}`} hidden={i !== 0}>
+				<p class="sample" set:html={p.html} />
+				<div class="facts">
+					<div>
+						<span class="k">{p.type}</span>
+						<span>{p.how}</span>
+					</div>
+					<div>
+						<span class="k">Ce que fait l'élève</span>
+						<span>{p.does}</span>
+					</div>
+					<div>
+						<span class="k">Effort de correction de l'élève</span>
+						<span class="meter" aria-label={`${p.effort} sur 3`}>
+							{[1, 2, 3].map((k) => (
+								<i class={k <= p.effort ? 'on' : ''} />
+							))}
+						</span>
+					</div>
+				</div>
+			</div>
+		))
+	}
+	<p class="legend">Codes : T temps, S structure étudiée, O construction du verbe. Exemple fictif.</p>
+</div>
+
+<script>
+	document.querySelectorAll<HTMLElement>('.profiles').forEach((root) => {
+		const tabs = [...root.querySelectorAll<HTMLButtonElement>('[role="tab"]')];
+		const panes = [...root.querySelectorAll<HTMLElement>('[role="tabpanel"]')];
+		const select = (i: number, focus = false) => {
+			tabs.forEach((t, k) => {
+				t.setAttribute('aria-selected', String(k === i));
+				t.tabIndex = k === i ? 0 : -1;
+			});
+			panes.forEach((p, k) => (p.hidden = k !== i));
+			if (focus) tabs[i].focus();
+		};
+		tabs.forEach((t, i) => {
+			t.addEventListener('click', () => select(i));
+			t.addEventListener('keydown', (e) => {
+				if (e.key === 'ArrowRight') select((i + 1) % tabs.length, true);
+				if (e.key === 'ArrowLeft') select((i + tabs.length - 1) % tabs.length, true);
+			});
+		});
+	});
+</script>
+
+<style>
+	.profiles {
+		border: 1px solid var(--sl-color-gray-5);
+		border-radius: 1rem;
+		padding: 1.25rem;
+		background: var(--sl-color-bg-nav);
+	}
+	.tabs {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+	}
+	[role='tab'] {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+		font: inherit;
+		font-weight: 600;
+		padding: 0.5rem 1rem;
+		border-radius: 999px;
+		border: 1px solid var(--sl-color-gray-5);
+		background: var(--sl-color-bg);
+		color: var(--sl-color-gray-2);
+		cursor: pointer;
+	}
+	[role='tab'][aria-selected='true'] {
+		background: var(--el-f);
+		border-color: var(--el-s);
+		color: var(--el-t);
+	}
+	.dot {
+		width: 0.6rem;
+		height: 0.6rem;
+		border-radius: 50%;
+		background: var(--el-s);
+	}
+	.sample {
+		margin: 1.25rem 0 1rem;
+		padding: 1.25rem 1.5rem;
+		background: #fff;
+		color: #1a1a1a;
+		border-radius: 0.75rem;
+		font-size: var(--sl-text-xl);
+		line-height: 1.8;
+		box-shadow: 0 2px 10px rgb(0 0 0 / 0.08);
+	}
+	.sample :global(del) {
+		color: #8c8c8c;
+	}
+	.sample :global(ins) {
+		color: #c62828;
+		font-weight: 700;
+		text-decoration: none;
+	}
+	.sample :global(u) {
+		text-decoration-thickness: 2px;
+		text-underline-offset: 4px;
+	}
+	.sample :global(.code) {
+		font-size: 0.75em;
+		vertical-align: super;
+		margin-left: 0.1em;
+		color: #1a1a1a;
+	}
+	.facts {
+		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: 1rem;
+	}
+	@media (max-width: 50rem) {
+		.facts {
+			grid-template-columns: 1fr;
+		}
+	}
+	.facts > div {
+		display: flex;
+		flex-direction: column;
+		gap: 0.3rem;
+	}
+	.k {
+		font-size: var(--sl-text-sm);
+		font-weight: 700;
+		color: var(--sl-color-gray-3);
+		text-transform: uppercase;
+		letter-spacing: 0.04em;
+	}
+	.meter {
+		display: flex;
+		gap: 0.35rem;
+		margin-top: 0.3rem;
+	}
+	.meter i {
+		width: 3rem;
+		height: 0.7rem;
+		border-radius: 999px;
+		background: var(--sl-color-gray-5);
+	}
+	.meter i.on {
+		background: var(--el-s);
+	}
+	.legend {
+		margin: 1rem 0 0;
+		font-size: var(--sl-text-sm);
+		color: var(--sl-color-gray-3);
+	}
+</style>

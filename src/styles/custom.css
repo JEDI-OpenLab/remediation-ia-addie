@@ -1,0 +1,105 @@
+/* Code couleur des rôles, repris des schémas : orange enseignant·e, bleu IA,
+   vert élève, rouge confidentiel. Starlight est sombre par défaut (:root),
+   le thème clair a ses propres valeurs. */
+:root[data-theme='light'] {
+	--ens-s: #b5762a;
+	--ens-f: #fdf1e3;
+	--ens-t: #7e4e14;
+	--ia-s: #4a6fa5;
+	--ia-f: #e8f0fe;
+	--ia-t: #2d5089;
+	--el-s: #2e7d4a;
+	--el-f: #e3f4e6;
+	--el-t: #1f6136;
+	--conf-s: #a33333;
+	--conf-f: #fbe4e4;
+	--conf-t: #922b2b;
+
+	--sl-color-accent-low: #f6e2c8;
+	--sl-color-accent: #9a5f1c;
+	--sl-color-accent-high: #4e2f0b;
+}
+
+:root {
+	--ens-s: #d9a05a;
+	--ens-f: #3a2a17;
+	--ens-t: #f3cf9f;
+	--ia-s: #86a8dc;
+	--ia-f: #1d2a40;
+	--ia-t: #c4d6f3;
+	--el-s: #6cc08a;
+	--el-f: #183324;
+	--el-t: #b7e5c6;
+	--conf-s: #e08080;
+	--conf-f: #3d1d1d;
+	--conf-t: #f3bdbd;
+
+	--sl-color-accent-low: #3a2a17;
+	--sl-color-accent: #e0a867;
+	--sl-color-accent-high: #f6dcbb;
+}
+
+/* Schémas SVG : fond blanc explicite, cliquables pour les ouvrir en grand */
+figure.schema {
+	margin: 1.75rem 0;
+}
+figure.schema a {
+	display: block;
+	border-radius: 14px;
+	overflow: hidden;
+	border: 1px solid var(--sl-color-gray-5);
+	background: #fff;
+	cursor: zoom-in;
+	transition: box-shadow 0.15s;
+}
+figure.schema a:hover {
+	box-shadow: 0 6px 24px rgb(0 0 0 / 0.12);
+}
+figure.schema img {
+	display: block;
+	width: 100%;
+	height: auto;
+	margin: 0;
+}
+.sl-markdown-content figure.schema + p > em:only-child {
+	display: block;
+	margin-top: -0.75rem;
+	color: var(--sl-color-gray-3);
+	font-size: var(--sl-text-sm);
+}
+
+/* Schémas Mermaid conservés (arbres de décision, petits schémas techniques) */
+.sl-markdown-content pre.mermaid {
+	background: #fff;
+	border: 1px solid var(--sl-color-gray-5);
+	border-radius: 14px;
+	padding: 1.25rem;
+	text-align: center;
+	color: transparent;
+	overflow-x: auto;
+	white-space: normal;
+	font-family: var(--__sl-font);
+}
+.sl-markdown-content pre.mermaid[data-processed] {
+	color: inherit;
+}
+
+/* Checklists de sortie : cases cochables */
+.sl-markdown-content input[type='checkbox'] {
+	accent-color: var(--el-s);
+	width: 1.05em;
+	height: 1.05em;
+	cursor: pointer;
+	vertical-align: -0.15em;
+}
+
+/* Question de chaque phase, en tête de page */
+.sl-markdown-content > p:first-child > strong:only-child {
+	display: block;
+	padding: 1rem 1.25rem;
+	border-left: 4px solid var(--sl-color-accent);
+	background: var(--sl-color-accent-low);
+	border-radius: 0 0.6rem 0.6rem 0;
+	color: var(--sl-color-white);
+	font-size: var(--sl-text-lg);
+}

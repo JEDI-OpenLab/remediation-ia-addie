@@ -13,6 +13,8 @@ Deux enseignements :
 1. **L'IA enrichit, l'enseignant·e réduit.** L'IA ajoute spontanément des rôles, des étapes, des supports. La version retenue est presque toujours la plus simple.
 2. **L'IA invente si on la laisse faire.** Le premier corrigé d'un film comportait des approximations ; il a fallu exiger que l'IA examine le film lui-même.
 
+![Entonnoir : la proposition de l'IA, chargée de groupes, de rôles, de cartes et d'un tournoi, passe trois filtres de l'enseignant·e (simplicité, faisabilité, vérification). La version retenue est une fiche unique ; la version 1 est refusée, la version 3 décline la version retenue à distance.](schemas/07-ia-enrichit-enseignant-reduit.svg)
+
 ## Recommandations
 
 ### 1. Donner à l'IA tout le contexte d'un coup
