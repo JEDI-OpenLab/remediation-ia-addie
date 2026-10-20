@@ -6,7 +6,7 @@
 
 ## Dans le cas
 
-L'IA a produit des lots complets par séance : fiche élève, déroulé minuté avec les phrases à dire, diaporama court, corrigé. L'enseignant·e a filtré ces propositions et demandé de simplifier quand elles étaient trop complexes.
+L'IA a produit les supports des séances : fiche élève, déroulé minuté avec les phrases à dire, diaporama court, corrigé. L'enseignant·e a filtré ces propositions et demandé de simplifier quand elles étaient trop complexes.
 
 Deux enseignements :
 

@@ -10,7 +10,16 @@ const stats = [
 	{ n: '≈ 20', l: 'élèves, un feedback individuel chacun' },
 	{ n: '≈ 30', l: "demandes à l'IA sur toute la séquence" },
 	{ n: '1', l: 'fichier de feedback par élève, relu par l’enseignant·e' },
-	{ n: '2 à 3 min', l: 'de validation par fichier : l’estimation que propose le guide' },
+	{ n: '2', l: 'axes du programme : Fictions et réalités, Innovations scientifiques et responsabilité' },
+];
+
+// Ce qui s'est passé, d'après le cas (faits validés par l'enseignant·e)
+const etapes = [
+	{ t: 'Concevoir', d: 'Une séquence de plusieurs semaines, en classe et à distance, construite autour d’une problématique avec une sous-question par semaine.' },
+	{ t: 'Produire avec l’IA', d: 'Fiches, déroulés, diaporamas, corrigés et grilles, simplifiés quand ils étaient trop complexes ; le corrigé du film vérifié sur le film lui-même.' },
+	{ t: 'Collecter', d: 'Des productions écrites en classe, ou à distance par photo ou texte ; les manuscrits transcrits par l’IA, les copies pseudonymisées.' },
+	{ t: 'Corriger', d: 'Un fichier par élève : texte corrigé, tableau des critères, Well done, Next time. À part, une note confidentielle pour l’enseignant·e.' },
+	{ t: 'Valider et envoyer', d: 'L’enseignant·e ajuste des notes, tranche les cas sensibles, relit les fichiers et les envoie. Les élèves lisent leur feedback.' },
 ];
 
 const fragiles = [
@@ -40,7 +49,7 @@ const gabarits = [
 >
 	<div class="home not-content">
 		<section class="hero">
-			<p class="eyebrow">Guide ouvert · JEDI-OpenLab · une relecture ADDIE</p>
+			<p class="eyebrow">Retour d'expérience · relu avec ADDIE · JEDI-OpenLab</p>
 			<h1>Remédiation personnalisée <span>assistée par IA</span></h1>
 			<blockquote>
 				Comment personnaliser la remédiation pour chaque élève alors que le temps de correction rend la personnalisation impraticable ?
@@ -64,6 +73,23 @@ const gabarits = [
 					))
 				}
 			</ul>
+		</section>
+
+		<section>
+			<p class="kicker">Le retour d'expérience</p>
+			<h2>Ce qui s'est passé</h2>
+			<p class="intro">Une classe de Terminale, une vingtaine d'élèves, une trentaine de demandes à l'IA. Le cas en cinq étapes :</p>
+			<ol class="timeline">
+				{
+					etapes.map((e) => (
+						<li>
+							<strong>{e.t}</strong>
+							<span>{e.d}</span>
+						</li>
+					))
+				}
+			</ol>
+			<a class="more" href={u('retour-experience/')}>Lire le retour d'expérience complet →</a>
 		</section>
 
 		<section>
@@ -116,7 +142,7 @@ const gabarits = [
 		</section>
 
 		<section>
-			<p class="kicker">Concevoir le feedback</p>
+			<p class="kicker">Une piste du guide</p>
 			<h2>Choisir la correction selon son objectif</h2>
 			<p class="intro">
 				Corriger directement ou indirectement ne dépend pas du niveau des élèves : cela dépend de ce que la correction cherche à produire.
@@ -286,6 +312,45 @@ const gabarits = [
 	.stats span {
 		color: var(--sl-color-gray-3);
 		font-size: var(--sl-text-sm);
+	}
+	.timeline {
+		list-style: none;
+		padding: 0;
+		margin: 1.5rem 0 0;
+		display: grid;
+		grid-template-columns: repeat(5, minmax(0, 1fr));
+		gap: 1rem;
+		counter-reset: t;
+	}
+	@media (max-width: 60rem) {
+		.timeline {
+			grid-template-columns: 1fr;
+		}
+	}
+	.timeline li {
+		counter-increment: t;
+		padding: 1rem 1.1rem 1.1rem;
+		border-radius: 0.75rem;
+		background: var(--sl-color-bg-nav);
+		border: 1px solid var(--sl-color-gray-5);
+		border-top: 4px solid var(--ens-s);
+		display: flex;
+		flex-direction: column;
+		gap: 0.4rem;
+		color: var(--sl-color-gray-2);
+		font-size: var(--sl-text-sm);
+		line-height: 1.5;
+	}
+	.timeline li::before {
+		content: counter(t);
+		font-weight: 800;
+		font-size: var(--sl-text-2xl);
+		color: var(--ens-s);
+		line-height: 1;
+	}
+	.timeline strong {
+		color: var(--sl-color-white);
+		font-size: var(--sl-text-base);
 	}
 	.keys {
 		display: grid;

@@ -2,7 +2,7 @@
 
 [← Sommaire](../README.md)
 
-Ces consignes généralisent celles qui ont fonctionné dans le cas, sauf « Repérer les erreurs récurrentes », « Boucle de classe » et « Coder la reprise des priorités » : ces trois-là ne viennent pas du cas, ce sont des pistes pour prolonger le dispositif. Elles sont courtes parce que les consignes efficaces données à l'IA ressemblent aux consignes efficaces données aux élèves : une intention, des contraintes, un format de sortie.
+Ces consignes s'inspirent de celles qui ont servi dans le cas, réécrites et complétées pour être réutilisables. Trois ne viennent pas du cas, ce sont des pistes pour prolonger le dispositif : « Repérer les erreurs récurrentes », « Boucle de classe » et « Coder la reprise des priorités ». Elles sont courtes parce que les consignes efficaces données à l'IA ressemblent aux consignes efficaces données aux élèves : une intention, des contraintes, un format de sortie.
 
 Les éléments entre crochets sont à remplacer.
 
@@ -30,7 +30,7 @@ Les éléments entre crochets sont à remplacer.
 
 ### Simplifier
 
-> C'est trop complexe. Garde une seule fiche, les documents dans l'ordre, une ou deux questions par document, et une production à rendre à la fin. Pas de rôles, pas de dispositif en groupes.
+> C'est trop complexe. Une tâche par bloc, des consignes de deux lignes maximum, rien qui demande du matériel ou une organisation qu'on n'a pas le temps d'installer. Garde l'essentiel : ce que les élèves doivent produire.
 
 ### Vérifier un contenu
 

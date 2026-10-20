@@ -54,7 +54,6 @@ Le cas se prête à une recherche-développement (design-based research) menée 
 - **Réception du feedback** : les élèves accordent-ils la même crédibilité à un feedback préparé avec une IA et validé par l'enseignant·e ? Le lisent-ils davantage parce qu'il est individuel, ou moins parce qu'ils le jugent automatique ?
 - **Fidélité des notes** : double correction d'un échantillon pour estimer l'accord inter-juges, critère par critère.
 - **Transformation du travail enseignant** : que devient le temps gagné ? Lecture plus fine des copies, boucle de classe mieux préparée, ou simple compression ?
-- **Écriture assistée côté élèves** : un premier jet personnel en classe, puis une révision assistée dont l'élève justifie chaque modification. Le feedback personnalisé donne alors un point de comparaison entre ce que l'élève sait faire seul·e et ce qu'il ou elle obtient avec l'outil.
 
 ## Outils
 

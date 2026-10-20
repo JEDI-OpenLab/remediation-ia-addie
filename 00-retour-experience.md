@@ -12,7 +12,7 @@ L'enseignant·e a travaillé avec une IA générative tout au long de la séquen
 
 ## Ce que demandait l'enseignant·e
 
-Six intentions reviennent dans les demandes, même formulées dans l'urgence.
+Six intentions reviennent dans les demandes.
 
 **Une cohérence autour d'une problématique.** Une sous-question par semaine, à laquelle répondent les documents, et dont la réponse alimente la question centrale.
 
@@ -28,7 +28,7 @@ Six intentions reviennent dans les demandes, même formulées dans l'urgence.
 
 ## Ce que produisait l'IA
 
-L'IA a joué le rôle d'un bureau d'études : elle traduisait une intention en objets utilisables (fiche, déroulé minuté avec les consignes à dire, diaporama, corrigé, grille), avec une mise en page constante.
+L'IA a joué le rôle d'un bureau d'études : elle traduisait une intention en objets utilisables (fiche, déroulé minuté avec les consignes à dire, diaporama, corrigé, grille).
 
 **La vérification des contenus.** Le corrigé initial d'un court-métrage d'animation étudié en classe comportait des approximations. À la demande de l'enseignant·e, l'IA a examiné le film lui-même, ce qui a corrigé le corrigé, puis permis de repérer dans plusieurs copies des scènes qui n'existent pas dans le film.
 

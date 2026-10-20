@@ -22,7 +22,7 @@ ADDIE (Analyse, Design, Développement, Implémentation, Évaluation) est le mod
 
 ![Cycle ADDIE en cinq phases : Analyse, Design, Développement, Implémentation, Évaluation. L'enseignant·e décide en Analyse, Design et Évaluation ; l'IA produit sous son contrôle en Développement et Implémentation. Des retours en pointillé montrent les itérations : support simplifié, seuils recalibrés, séquence suivante.](schemas/08-cycle-addie.svg)
 
-*En orange, les phases où la décision appartient entièrement à l'enseignant·e ; en bleu, celles où l'IA produit et où l'enseignant·e filtre et valide. Les flèches en pointillé sont les itérations observées dans le cas.*
+*En orange, les phases où la décision appartient entièrement à l'enseignant·e ; en bleu, celles où l'IA produit et où l'enseignant·e filtre et valide. Les flèches en pointillé sont des retours en arrière : simplifier un support, recalibrer des notes, préparer la séquence suivante.*
 
 Mettre la démarche en mots avec ADDIE fait surtout apparaître une distinction que le fil de travail, centré sur l'action, ne rendait pas visible : celle entre **évaluer les apprentissages** (corriger les copies, donner un feedback) et **évaluer le dispositif** (vérifier que ce feedback a servi). La première relève de l'implémentation, la seconde de l'évaluation.
 
@@ -90,7 +90,7 @@ npm run dev
 
 ## Anonymisation
 
-L'enseignant·e, la classe et l'établissement ne sont pas identifiés. Aucun extrait de copie réelle n'est reproduit : les exemples sont reconstruits. Les consignes pour l'IA et le modèle de feedback sont généralisés à partir de ceux qui ont fonctionné dans le cas. La grille avec descripteurs, la checklist de validation, le suivi des priorités et les consignes « Repérer les erreurs récurrentes », « Boucle de classe » et « Coder la reprise des priorités » sont des propositions de ce guide.
+L'enseignant·e, la classe et l'établissement ne sont pas identifiés. Aucun extrait de copie réelle n'est reproduit : les exemples sont inventés pour illustrer les formats et n'ont aucun lien avec les copies de la classe. Les consignes pour l'IA et le modèle de feedback s'inspirent de ceux qui ont servi dans le cas, réécrits pour être réutilisables. La grille avec descripteurs, la checklist de validation, le suivi des priorités et les consignes « Repérer les erreurs récurrentes », « Boucle de classe » et « Coder la reprise des priorités » sont des propositions de ce guide.
 
 ## Licence et citation
 

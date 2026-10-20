@@ -2,7 +2,7 @@
 
 [← Sommaire](README.md)
 
-Le dispositif mobilise plusieurs cadres. On retient ici ceux qui ont réellement orienté des décisions de conception.
+Les cadres que ce guide mobilise pour relire le cas et formuler ses recommandations.
 
 ## Ingénierie pédagogique
 
@@ -38,10 +38,9 @@ Le dispositif mobilise plusieurs cadres. On retient ici ceux qui ont réellement
 
 ## Didactique des langues
 
-- Long, M. H. (1991). Focus on form: A design feature in language teaching methodology. In K. de Bot, R. Ginsberg & C. Kramsch (Eds.), *Foreign Language Research in Cross-Cultural Perspective* (pp. 39-52). John Benjamins.
 - Conseil de l'Europe (2001). *Cadre européen commun de référence pour les langues : apprendre, enseigner, évaluer*. Didier.
 
-**Ce que cela change ici** : la grammaire est tirée des documents au moment où le sens la réclame ; les tâches finales placent l'élève en situation d'agir avec la langue.
+**Ce que cela change ici** : le niveau visé (B2) et la place donnée aux tâches de production.
 
 ## Recherche-développement
 

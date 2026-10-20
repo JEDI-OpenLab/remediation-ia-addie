@@ -49,7 +49,7 @@ Rien de la seconde sortie ne doit apparaître dans la première.
 - une priorité Next time qui ne correspond pas à la principale difficulté du texte ;
 - un ton inadapté à l'élève.
 
-Compter deux à trois minutes par fichier. C'est bien moins que les dix à quinze minutes d'un feedback personnalisé rédigé à la main.
+Compter deux à trois minutes par fichier. C'est bien moins que le temps d'un feedback personnalisé rédigé entièrement à la main.
 
 ### 5. Traiter les cas sensibles hors du feedback
 

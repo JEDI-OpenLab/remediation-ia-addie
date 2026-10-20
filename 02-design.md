@@ -12,7 +12,7 @@ Le design est la force du cas :
 - une **tâche de production** à chaque séance ;
 - une **grille critériée** donnée avec la consigne ;
 - des notes au statut **bonus** pour le travail fait à distance ;
-- un format de **feedback** défini à l'avance (texte corrigé, note par critère, Well done, Next time).
+- un format de **feedback** commun à tous les élèves (texte corrigé, note par critère, Well done, Next time).
 
 Une faiblesse : une grille dont plusieurs critères récompensaient la présence d'un élément plus que sa qualité.
 
@@ -74,11 +74,13 @@ Dans le cas, le bonus concernait le travail fait à distance, sans surveillance.
 
 ### 5. Concevoir le feedback
 
-Le format du cas applique le modèle de Hattie et Timperley : où vais-je (les critères), où en suis-je (la note commentée), quelle est la prochaine étape (Next time). Deux pistes pour aller plus loin :
+Le format du cas applique le modèle de Hattie et Timperley : où vais-je (les critères), où en suis-je (la note commentée), quelle est la prochaine étape (Next time).
 
 ![Maquette d'un fichier de feedback inventé, sans lien avec les copies de la classe : le texte de l'élève annoté, une ligne par critère, une réussite nommée et une priorité. Les annotations relient chaque partie aux trois questions du feedback efficace.](schemas/02-anatomie-feedback.svg)
 
 *Exemple inventé pour illustrer le format : il n'a aucun lien avec les copies de la classe.*
+
+Trois pistes pour aller plus loin :
 
 **Choisir le type de correction selon l'objectif.** Corriger directement (l'erreur barrée et sa correction) ou indirectement (l'erreur signalée, que l'élève corrige) ne dépend pas du niveau des élèves. Cela dépend de ce que la correction cherche à produire. Réserver la correction toute faite aux élèves les plus fragiles reviendrait à les priver de la possibilité de se corriger eux-mêmes.
 

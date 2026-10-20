@@ -6,9 +6,9 @@
 
 ## Dans le cas
 
-L'analyse n'a pas été écrite. Elle était pourtant bien là, comme souvent dans une pratique experte, et transparaît dans les demandes : le programme et l'axe visé, les pages du manuel, les contraintes horaires, l'alternance entre classe et distance, la question de savoir qui avait fait le travail précédent, les outils réellement disponibles, le risque d'usage de l'IA sur un devoir non surveillé.
+L'analyse n'a pas été écrite. Elle était pourtant bien là, comme souvent dans une pratique experte, et transparaît dans les demandes : le programme et les axes visés, les pages du manuel, les contraintes horaires, l'alternance entre classe et distance, la question de savoir qui avait fait le travail précédent, les outils réellement disponibles, le risque d'usage de l'IA sur un devoir non surveillé.
 
-Le besoin de fond n'était pas écrit, mais il est clair : **donner à chaque élève un retour sur son propre texte**, ce que le temps de correction (dix à quinze minutes par copie pour un feedback personnalisé) rend d'ordinaire impossible.
+Le besoin de fond n'était pas écrit, mais il est clair : **donner à chaque élève un retour sur son propre texte**, ce que le temps de correction rend d'ordinaire impossible.
 
 ## Recommandations
 
@@ -34,7 +34,7 @@ Formuler ce qui doit changer pour les élèves, pas ce qu'on veut faire avec l'I
 
 ### 4. Poser le cadre de protection des données dès maintenant
 
-C'est le point que le cas a traité trop tard. Les productions d'élèves mineurs sont des données personnelles ; certains textes peuvent contenir des données sensibles (santé, deuil, situation familiale).
+C'est le point le plus délicat du cas : des copies, dont certaines très personnelles, ont transité par un outil en ligne. Les productions d'élèves mineurs sont des données personnelles ; certains textes peuvent contenir des données sensibles (santé, deuil, situation familiale).
 
 - **Choisir l'outil** : utiliser un outil d'IA mis à disposition ou validé par l'établissement ou l'académie, plutôt qu'un compte personnel grand public. Se référer au cadre d'usage de l'IA en éducation publié par le ministère et au délégué à la protection des données.
 - **Minimiser** : pseudonymiser avant envoi (numéros ou initiales), retirer des textes les informations personnelles inutiles à la correction. Pour les manuscrits photographiés, cadrer la photo sur le texte et masquer le nom.
