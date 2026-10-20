@@ -1,0 +1,52 @@
+---
+// Titre du site : le logo JEDI-OpenLab renvoie vers le portail des guides,
+// le titre renvoie vers l'accueil de ce guide.
+import { logos } from 'virtual:starlight/user-images';
+import config from 'virtual:starlight/user-config';
+const { siteTitle, siteTitleHref } = Astro.locals.starlightRoute;
+const PORTAIL = 'https://jedi-openlab.github.io/jedi/';
+---
+
+<div class="site-title sl-flex">
+	{
+		config.logo && logos.dark && (
+			<a href={PORTAIL} class="portal" title="Portail JEDI-OpenLab">
+				<img alt="Portail JEDI-OpenLab" src={logos.dark.src} width={logos.dark.width} height={logos.dark.height} />
+			</a>
+		)
+	}
+	<a href={siteTitleHref} class="home" translate="no">{siteTitle}</a>
+</div>
+
+<style>
+	.site-title {
+		align-items: center;
+		gap: var(--sl-nav-gap);
+		min-width: 0;
+	}
+	.portal {
+		display: flex;
+		flex-shrink: 0;
+		border-radius: 0.5rem;
+		transition: transform 0.15s;
+	}
+	.portal:hover,
+	.portal:focus-visible {
+		transform: scale(1.06);
+	}
+	img {
+		height: calc(var(--sl-nav-height) - 2 * var(--sl-nav-pad-y));
+		width: auto;
+		object-fit: contain;
+	}
+	.home {
+		font-size: var(--sl-text-h4);
+		font-weight: 600;
+		color: var(--sl-color-text-accent);
+		text-decoration: none;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		min-width: 0;
+	}
+</style>

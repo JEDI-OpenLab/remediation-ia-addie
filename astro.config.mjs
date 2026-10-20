@@ -17,7 +17,9 @@ export default defineConfig({
 				{ icon: 'github', label: 'GitHub', href: 'https://github.com/JEDI-OpenLab/remediation-ia-addie' },
 			],
 			customCss: ['./src/styles/custom.css'],
-			components: { Head: './src/components/Head.astro' },
+			components: { Head: './src/components/Head.astro', SiteTitle: './src/components/SiteTitle.astro',
+				SocialIcons: './src/components/SocialIcons.astro',
+			},
 			lastUpdated: false,
 			sidebar: [
 				{ label: 'Accueil', link: '/' },
