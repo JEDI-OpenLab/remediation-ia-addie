@@ -31,7 +31,7 @@ Mettre la démarche en mots avec ADDIE fait surtout apparaître une distinction 
 | Phase | Ce que montre le cas | Ce que ce dépôt ajoute |
 |---|---|---|
 | [Analyse](01-analyse.md) | Programme, contraintes horaires, travail à distance, risque d'usage de l'IA par les élèves | Un diagnostic explicite des besoins ; le cadre de protection des données posé dès le départ |
-| [Design](02-design.md) | Une problématique, une sous-question par semaine, une grille annoncée, des notes bonus pour le travail à distance | Une grille avec descripteurs de niveau ; un feedback modulé selon les élèves |
+| [Design](02-design.md) | Une problématique, une sous-question par semaine, une grille annoncée, des notes bonus pour le travail à distance | Une grille avec descripteurs de niveau ; un type de correction choisi selon l'objectif ; le repérage des erreurs récurrentes |
 | [Développement](03-developpement.md) | Supports produits avec l'IA, simplifiés à la demande, vérification des contenus | Des critères de refus explicites ; la vérification des sources comme règle |
 | [Implémentation](04-implementation.md) | Production en classe, collecte, feedback individuel envoyé à chaque élève | Une checklist de validation de chaque fichier avant envoi |
 | [Évaluation](05-evaluation.md) | Un feedback individuel lu par chaque élève, sans mesure de son effet | Une boucle de classe (Error Hunt) et des indicateurs pour évaluer le dispositif lui-même |
@@ -90,7 +90,7 @@ npm run dev
 
 ## Anonymisation
 
-L'enseignant·e, la classe et l'établissement ne sont pas identifiés. Aucun extrait de copie réelle n'est reproduit : les exemples sont reconstruits. Les consignes pour l'IA et le modèle de feedback sont généralisés à partir de ceux qui ont fonctionné dans le cas. La grille avec descripteurs, la checklist de validation, le suivi des priorités et les consignes « Boucle de classe » et « Coder la reprise des priorités » sont des propositions de ce guide.
+L'enseignant·e, la classe et l'établissement ne sont pas identifiés. Aucun extrait de copie réelle n'est reproduit : les exemples sont reconstruits. Les consignes pour l'IA et le modèle de feedback sont généralisés à partir de ceux qui ont fonctionné dans le cas. La grille avec descripteurs, la checklist de validation, le suivi des priorités et les consignes « Repérer les erreurs récurrentes », « Boucle de classe » et « Coder la reprise des priorités » sont des propositions de ce guide.
 
 ## Licence et citation
 

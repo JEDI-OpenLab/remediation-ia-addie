@@ -14,7 +14,7 @@
 
 - [ ] **Corrections justes** : aucune « erreur » corrigée alors que l'énoncé était correct.
 - [ ] **Pas de style déguisé en faute** : les reformulations de style ne sont pas présentées comme des erreurs.
-- [ ] **Type de correction** : directe ou indirecte, conformément à ce qui a été décidé pour cet·te élève.
+- [ ] **Type de correction** : directe ou indirecte, conformément à l'objectif fixé pour cette production.
 - [ ] **Priorité pertinente** : la ligne Next time correspond bien à la principale difficulté du texte.
 - [ ] **Réussite précise** : la ligne Well done nomme quelque chose de réel dans le texte.
 - [ ] **Ton** : adapté à l'élève, ni condescendant ni décourageant.

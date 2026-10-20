@@ -34,7 +34,7 @@ Le dispositif mobilise plusieurs cadres. On retient ici ceux qui ont réellement
 - Ellis, R. (2009). A typology of written corrective feedback types. *ELT Journal*, 63(2), 97-107.
 - Bitchener, J., & Knoch, U. (2010). Raising the linguistic accuracy level of advanced L2 writers with written corrective feedback. *Journal of Second Language Writing*, 19(4), 207-217.
 
-**Ce que cela change ici** : moduler la correction (directe ou indirecte) selon les élèves, et cibler une priorité plutôt que tout corriger.
+**Ce que cela change ici** : choisir la correction (directe ou indirecte) selon son objectif, et cibler une priorité plutôt que tout corriger.
 
 ## Didactique des langues
 

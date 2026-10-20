@@ -43,11 +43,11 @@ Si un critère n'a pas d'objectif en face, il faut le supprimer. Si un objectif 
 
 ### 2. Construire la problématique
 
-Une question centrale, puis une sous-question par semaine. Chaque sous-question doit pouvoir être traitée avec les documents de la semaine et apporter une réponse partielle à la question centrale. Un support visible (mur, tableau partagé) garde la trace des réponses accumulées.
+Une question centrale, puis une sous-question par semaine. Chaque sous-question doit pouvoir être traitée avec les documents de la semaine et apporter une réponse partielle à la question centrale.
 
 ```mermaid
 flowchart LR
-    S1["Semaine 1<br/>sous-question 1<br/>documents A, B"] --> M["Mur de réponses<br/>éléments de réponse /<br/>nouvelles questions"]
+    S1["Semaine 1<br/>sous-question 1<br/>documents A, B"] --> M["Réponses accumulées<br/>semaine après semaine"]
     S2["Semaine 2<br/>sous-question 2<br/>documents C, D"] --> M
     S3["Semaine 3<br/>sous-question 3<br/>documents E, F"] --> M
     M --> Q["Problématique<br/>de la séquence"]
@@ -74,21 +74,23 @@ Dans le cas, le bonus concernait le travail fait à distance, sans surveillance.
 
 ### 5. Concevoir le feedback
 
-Le format du cas applique le modèle de Hattie et Timperley : où vais-je (les critères), où en suis-je (la note commentée), quelle est la prochaine étape (Next time). Deux ajustements :
+Le format du cas applique le modèle de Hattie et Timperley : où vais-je (les critères), où en suis-je (la note commentée), quelle est la prochaine étape (Next time). Deux pistes pour aller plus loin :
 
 ![Maquette d'un fichier de feedback inventé, sans lien avec les copies de la classe : le texte de l'élève annoté, une ligne par critère, une réussite nommée et une priorité. Les annotations relient chaque partie aux trois questions du feedback efficace.](schemas/02-anatomie-feedback.svg)
 
 *Exemple inventé pour illustrer le format : il n'a aucun lien avec les copies de la classe.*
 
-**Moduler la correction selon les élèves.** La correction directe (l'erreur et sa correction) aide surtout les élèves les plus fragiles. Pour les autres, la correction indirecte (erreur soulignée ou codée, sans la réponse) les oblige à chercher, et c'est cette recherche qui fait progresser.
+**Choisir le type de correction selon l'objectif.** Corriger directement (l'erreur barrée et sa correction) ou indirectement (l'erreur signalée, que l'élève corrige) ne dépend pas du niveau des élèves. Cela dépend de ce que la correction cherche à produire. Réserver la correction toute faite aux élèves les plus fragiles reviendrait à les priver de la possibilité de se corriger eux-mêmes.
 
-| Profil | Type de correction | Ce que fait l'élève ensuite |
+| Type de correction | Ce que voit l'élève | Ce que fait l'élève ensuite |
 |---|---|---|
-| Élève en difficulté sur la langue | Directe : erreur barrée, correction donnée | Recopie le passage corrigé et l'explique |
-| Élève intermédiaire | Mixte : directe sur les erreurs hors programme, indirecte sur les structures étudiées | Corrige seul·e les erreurs signalées |
-| Élève avancé·e | Indirecte : erreur soulignée et codée | Corrige seul·e et justifie |
+| Directe | L'erreur barrée, la correction donnée | Relit la correction et l'explique |
+| Mixte | Directe sur certaines erreurs, codée sur d'autres (par exemple la structure étudiée) | Corrige les erreurs codées |
+| Indirecte | L'erreur soulignée et codée, sans la réponse | Corrige et justifie |
 
-![Échelle de correction, de directe à indirecte, illustrée par une phrase inventée : plus la correction est indirecte, plus l'élève fait lui-même le travail de correction.](schemas/05-curseur-correction.svg)
+**Faire repérer les erreurs récurrentes.** Une piste prometteuse consiste à aider chaque élève à prendre conscience de ses erreurs les plus fréquentes et les plus saillantes, plutôt que de traiter chaque erreur isolément. C'est là que la remédiation personnalisée par IA prend tout son sens : l'IA peut relever, d'une production à l'autre, les erreurs qui reviennent chez un même élève (consigne « Repérer les erreurs récurrentes » dans [gabarits/prompts.md](gabarits/prompts.md)), et la ligne Next time peut porter sur la plus récurrente.
+
+![Échelle de correction, de directe à indirecte, illustrée par une phrase inventée : plus la correction est indirecte, plus l'élève fait lui-même le travail de correction. Le choix dépend de l'objectif de la correction, pas du niveau de l'élève.](schemas/05-curseur-correction.svg)
 
 *Exemple inventé pour illustrer le format : il n'a aucun lien avec les copies de la classe.*
 
@@ -119,5 +121,5 @@ Le feedback n'a d'effet que s'il est utilisé (Carless et Boud). Prévoir dès l
 - [ ] La grille a des descripteurs pour chaque niveau.
 - [ ] Un critère porte sur un contenu vu en classe, un sur une structure enseignée.
 - [ ] Le statut de la note est décidé.
-- [ ] Le type de correction est décidé pour chaque profil d'élève.
+- [ ] Le type de correction est choisi selon l'objectif de la correction.
 - [ ] Le temps de classe consacré au feedback est prévu dans la progression.

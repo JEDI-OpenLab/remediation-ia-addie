@@ -5,7 +5,7 @@
 import { svg, R, INK, MUTE, rect, text, tblock } from './lib.mjs';
 
 export const alt =
-	"Échelle de correction, de directe à indirecte, illustrée par une phrase inventée : plus la correction est indirecte, plus l'élève fait lui-même le travail de correction.";
+	"Échelle de correction, de directe à indirecte, illustrée par une phrase inventée : plus la correction est indirecte, plus l'élève fait lui-même le travail de correction. Le choix dépend de l'objectif de la correction, pas du niveau de l'élève.";
 
 const RED = '#C62828';
 const GREY = '#8C8C8C';
@@ -17,7 +17,7 @@ export default function () {
 	let b = '';
 
 	b += text(40, 46, 'Le curseur de correction', { size: 20, weight: 700 });
-	b += text(40, 72, 'Pourquoi ne pas tout corriger pour tout le monde ?', { fill: MUTE });
+	b += text(40, 72, "Trois façons de corriger une même erreur", { fill: MUTE });
 
 	// Échelle
 	b += `<defs><linearGradient id="g5" x1="0" x2="1"><stop offset="0" stop-color="${R.el.f}"/><stop offset="1" stop-color="${R.el.s}"/></linearGradient></defs>`;
@@ -43,21 +43,19 @@ export default function () {
 	b += tblock(xs[1], 256, [{ t: 'directe hors programme,', fill: MUTE }, { t: 'codée sur la structure étudiée', fill: MUTE }]);
 	b += tblock(xs[2], 246, [{ t: exNote[2], fill: MUTE }]);
 
-	// Lignes : pour qui, ce que fait l'élève
+	// Lignes : le principe du choix, ce que fait l'élève
 	const rowsY = [318, 384];
 	b += `<line x1="40" y1="290" x2="920" y2="290" stroke="#E6E6E6"/>`;
 	b += `<line x1="40" y1="352" x2="920" y2="352" stroke="#E6E6E6"/>`;
 	b += `<line x1="40" y1="416" x2="920" y2="416" stroke="#E6E6E6"/>`;
-	b += tblock(40, rowsY[0], [{ t: 'Pour qui ?', weight: 700 }], { anchor: 'start' });
+	b += tblock(480, rowsY[0], [{ t: "Le choix dépend de l'objectif de la correction, pas du niveau de l'élève.", weight: 700, fill: R.el.t }]);
 	b += tblock(40, rowsY[1], [{ t: "Ce que fait", weight: 700 }, { t: "l'élève", weight: 700 }], { anchor: 'start' });
-	const who = ['Élève en difficulté', 'Élève intermédiaire', 'Élève avancé·e'];
 	const does = [
-		['Recopie le passage', 'corrigé et l\'explique'],
-		['Corrige seul·e', 'les erreurs signalées'],
-		['Corrige seul·e', 'et justifie'],
+		['Relit la correction', 'et l\'explique'],
+		['Corrige les', 'erreurs codées'],
+		['Corrige', 'et justifie'],
 	];
 	xs.forEach((x, i) => {
-		b += tblock(x, rowsY[0], [{ t: who[i], fill: R.el.t, weight: 600 }]);
 		b += tblock(x, rowsY[1], does[i]);
 	});
 

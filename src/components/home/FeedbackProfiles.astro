@@ -1,32 +1,33 @@
 ---
 // Le curseur de correction (schéma n° 5) en version interactive :
-// la même phrase d'élève, corrigée de trois façons selon le profil.
-// Exemple fictif, repris de gabarits/modele-feedback.md.
+// la même phrase d'élève, corrigée de trois façons. Le choix dépend de
+// l'objectif de la correction, pas du niveau de l'élève.
+// Phrase inventée, reprise de gabarits/modele-feedback.md.
 const profiles = [
 	{
 		id: 'directe',
-		label: 'En difficulté',
-		type: 'Correction directe',
+		label: 'Correction directe',
+		type: 'Ce que voit l’élève',
 		how: 'Erreur barrée, correction donnée.',
-		does: "Recopie le passage corrigé et l'explique.",
+		does: "Relit la correction et l'explique.",
 		effort: 1,
 		html: 'Yesterday we <del>watch</del> <ins>watched</ins> a short film. If I <del>am</del> <ins>were</ins> him, I would stop <del>to buy</del> <ins>buying</ins> things.',
 	},
 	{
 		id: 'mixte',
-		label: 'Intermédiaire',
-		type: 'Correction mixte',
-		how: 'Directe sur les erreurs hors programme, codée sur la structure étudiée.',
-		does: 'Corrige seul·e les erreurs signalées.',
+		label: 'Correction mixte',
+		type: 'Ce que voit l’élève',
+		how: 'Correction donnée sur certaines erreurs, code sur la structure étudiée.',
+		does: 'Corrige les erreurs codées.',
 		effort: 2,
 		html: 'Yesterday we <del>watch</del> <ins>watched</ins> a short film. If I <u>am</u><b class="code">[S]</b> him, I would stop <del>to buy</del> <ins>buying</ins> things.',
 	},
 	{
 		id: 'indirecte',
-		label: 'Avancé·e',
-		type: 'Correction indirecte',
+		label: 'Correction indirecte',
+		type: 'Ce que voit l’élève',
 		how: 'Erreur soulignée et codée, sans la réponse.',
-		does: 'Corrige seul·e et justifie.',
+		does: 'Corrige et justifie.',
 		effort: 3,
 		html: 'Yesterday we <u>watch</u><b class="code">[T]</b> a short film. If I <u>am</u><b class="code">[S]</b> him, I would stop <u>to buy</u><b class="code">[O]</b> things.',
 	},
@@ -34,12 +35,12 @@ const profiles = [
 ---
 
 <div class="profiles">
-	<div class="tabs" role="tablist" aria-label="Profil de l'élève">
+	<div class="tabs" role="tablist" aria-label="Type de correction">
 		{
 			profiles.map((p, i) => (
 				<button role="tab" id={`tab-${p.id}`} aria-controls={`pane-${p.id}`} aria-selected={i === 0 ? 'true' : 'false'} tabindex={i === 0 ? 0 : -1}>
 					<span class="dot" aria-hidden="true" />
-					Élève {p.label.toLowerCase()}
+					{p.label}
 				</button>
 			))
 		}

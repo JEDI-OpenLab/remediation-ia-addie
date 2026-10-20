@@ -8,7 +8,7 @@ Le fichier a deux parties : le texte de l'élève annoté, puis l'évaluation d
 
 > **Exemple inventé pour illustrer le format.** Il n'a aucun lien avec les copies de la classe : ni le texte, ni le destinataire (« Sam »), ni les notes ne viennent du cas.
 
-## Version correction directe (élève en difficulté sur la langue)
+## Version correction directe
 
 ### Ton texte
 
@@ -33,7 +33,7 @@ Total : 11/20 (note bonus)
 **Well done** : tu as utilisé « although » correctement pour opposer deux idées.
 **Next time** : après « If », mets le verbe au prétérit (« If I were », « If he had »).
 
-## Version correction indirecte (élève avancé·e)
+## Version correction indirecte
 
 ### Ton texte
 
