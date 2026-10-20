@@ -103,3 +103,79 @@ figure.schema img {
 	color: var(--sl-color-white);
 	font-size: var(--sl-text-lg);
 }
+
+/* Schémas Mermaid : cliquables pour les agrandir */
+.sl-markdown-content pre.mermaid[data-processed] {
+	position: relative;
+	cursor: zoom-in;
+}
+.sl-markdown-content pre.mermaid:hover,
+.sl-markdown-content pre.mermaid:focus-visible {
+	box-shadow: 0 6px 24px rgb(0 0 0 / 0.12);
+}
+.zoom-hint {
+	position: absolute;
+	top: 0.6rem;
+	right: 0.6rem;
+	padding: 0.2rem 0.6rem;
+	border-radius: 999px;
+	background: #f2f2f0;
+	color: #3d3d3d;
+	font-size: var(--sl-text-xs);
+	font-weight: 600;
+	line-height: 1.6;
+}
+.zoom-hint::before {
+	content: '⤢ ';
+}
+
+/* Visionneuse plein écran */
+dialog.zoom {
+	position: fixed;
+	inset: 0;
+	margin: auto;
+	width: 96vw;
+	max-width: 96vw;
+	height: 92vh;
+	max-height: 92vh;
+	padding: 0;
+	border: 0;
+	border-radius: 16px;
+	background: #fff;
+	overflow: hidden;
+}
+dialog.zoom::backdrop {
+	background: rgb(0 0 0 / 0.75);
+}
+dialog.zoom .zoom-body {
+	width: 100%;
+	height: 100%;
+	padding: 3rem 1.5rem 1.5rem;
+	box-sizing: border-box;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: zoom-out;
+}
+dialog.zoom .zoom-body > svg,
+dialog.zoom .zoom-body > img {
+	width: 100%;
+	height: 100%;
+	max-width: none;
+	object-fit: contain;
+	cursor: default;
+}
+dialog.zoom .zoom-close {
+	position: absolute;
+	top: 0.75rem;
+	right: 0.75rem;
+	z-index: 1;
+	padding: 0.4rem 0.9rem;
+	border: 1px solid #d0d0d0;
+	border-radius: 999px;
+	background: #fff;
+	color: #1a1a1a;
+	font: inherit;
+	font-weight: 600;
+	cursor: pointer;
+}

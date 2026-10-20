@@ -25,6 +25,55 @@ import Default from '@astrojs/starlight/components/Head.astro';
 			flowchart: { curve: 'basis', padding: 14 },
 		});
 		await mermaid.run({ nodes: blocks });
+		blocks.forEach((pre) => {
+			const svg = pre.querySelector('svg');
+			if (!svg) return;
+			pre.tabIndex = 0;
+			pre.setAttribute('role', 'button');
+			pre.setAttribute('aria-label', 'Agrandir le schéma');
+			pre.insertAdjacentHTML('beforeend', '<span class="zoom-hint" aria-hidden="true">Agrandir</span>');
+			const open = () => zoom(svg.cloneNode(true) as SVGElement);
+			pre.addEventListener('click', open);
+			pre.addEventListener('keydown', (e) => {
+				if (e.key === 'Enter' || e.key === ' ') {
+					e.preventDefault();
+					open();
+				}
+			});
+		});
+	}
+
+	// Schémas SVG : ouverts dans la visionneuse plutôt que dans un nouvel onglet
+	// (le lien reste utilisable sans JavaScript).
+	document.querySelectorAll<HTMLAnchorElement>('figure.schema > a').forEach((a) => {
+		a.addEventListener('click', (e) => {
+			if (e.metaKey || e.ctrlKey || e.shiftKey) return;
+			const img = a.querySelector('img');
+			if (!img) return;
+			e.preventDefault();
+			zoom(img.cloneNode(true) as HTMLImageElement);
+		});
+	});
+
+	// Visionneuse plein écran : le schéma occupe toute la fenêtre, Échap ou un
+	// clic hors du schéma la referme.
+	function zoom(node: Element) {
+		const dialog = document.createElement('dialog');
+		dialog.className = 'zoom';
+		dialog.setAttribute('aria-label', 'Schéma agrandi');
+		node.removeAttribute('style');
+		node.removeAttribute('loading');
+		node.removeAttribute('width');
+		node.removeAttribute('height');
+		dialog.innerHTML = '<button type="button" class="zoom-close">Fermer ✕</button><div class="zoom-body"></div>';
+		dialog.querySelector('.zoom-body')!.append(node);
+		document.body.append(dialog);
+		dialog.addEventListener('close', () => dialog.remove());
+		dialog.addEventListener('click', (e) => {
+			const t = e.target as Element;
+			if (t === dialog || t.classList.contains('zoom-body') || t.classList.contains('zoom-close')) dialog.close();
+		});
+		dialog.showModal();
 	}
 
 	// Checklists du guide : cochables, mémorisées dans ce navigateur.

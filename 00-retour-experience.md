@@ -6,6 +6,8 @@
 
 Une séquence d'anglais en Terminale, niveau visé B2, sur l'axe du programme « Fictions et réalités ». La séquence s'étend sur plusieurs semaines et alterne séances en classe et travail à distance. La classe compte une vingtaine d'élèves.
 
+L'enseignant·e est formé·e à l'ingénierie pédagogique et connaît le modèle ADDIE. Sa pratique ne s'y réfère pas explicitement : c'est cette relecture qui met les phases en mots.
+
 L'enseignant·e a travaillé avec une IA générative tout au long de la séquence : une trentaine de demandes, de la conception des séances à la correction des copies. Le corpus de cette relecture est ce fil de travail : les demandes, les livrables produits (fiches élèves, déroulés, diaporamas, corrigés, grilles, fichiers de correction individuels) et les refus ou reformulations qui l'ont jalonné.
 
 ## Ce que demandait l'enseignant·e
@@ -30,19 +32,7 @@ L'IA a joué le rôle d'un bureau d'études : elle traduisait une intention en 
 
 **Une tension productive.** Sur une séance de reprise, trois versions ont été produites en une heure : un dispositif en groupes avec cartes, mur et tournoi de questions, jugé incompréhensible ; une fiche unique reprenant les documents un par un, adoptée ; puis sa variante à distance. L'IA tend spontanément vers l'enrichissement (plus de structures, plus de rôles, plus de supports). L'enseignant·e tend vers la réduction. C'est la version la plus simple qui a été retenue.
 
-```mermaid
-flowchart LR
-    Int["Intention de<br/>l'enseignant·e"] --> V1["Version 1<br/>groupes, cartes, mur,<br/>tournoi de questions"]
-    V1 -->|"« on ne comprend rien »"| X1(["refusée"])
-    X1 --> V2["Version 2<br/>une fiche unique,<br/>les documents un par un"]
-    V2 -->|"adoptée"| OK(["retenue"])
-    OK --> V3["Version 3<br/>variante à distance"]
-
-    classDef refus fill:#fbe4e4,stroke:#a33,color:#1a1a1a
-    classDef ok fill:#e3f4e6,stroke:#2e7d4a,color:#1a1a1a
-    class X1 refus
-    class OK ok
-```
+![Entonnoir : la proposition de l'IA, chargée de groupes, de rôles, de cartes et d'un tournoi, passe trois filtres de l'enseignant·e (simplicité, faisabilité, vérification). La version retenue est une fiche unique ; la version 1 est refusée, la version 3 décline la version retenue à distance.](schemas/07-ia-enrichit-enseignant-reduit.svg)
 
 *Une séance de reprise, trois versions en une heure : l'IA propose en enrichissant, l'enseignant·e tranche en simplifiant.*
 
@@ -59,7 +49,7 @@ Chaque élève a reçu un fichier individuel :
 - le total ;
 - une ligne **Well done** (une réussite nommée) et une ligne **Next time** (une ou deux priorités).
 
-![Trois niveaux d'adaptation : différencier selon des profils, individualiser par groupes de besoin, personnaliser pour chaque élève, le plus coûteux en temps et celui que l'IA rend accessible.](schemas/06-differencier-individualiser-personnaliser.svg)
+![Trois niveaux d'adaptation : différencier selon des profils, individualiser par groupes de besoin, personnaliser pour chaque élève, le plus coûteux en temps et celui que l'IA rend accessible.](schemas/06-differencier-individualiser-personnaliser.svg)
 
 *Personnaliser, c'est-à-dire répondre à chaque élève sur son propre texte, était hors de portée à la main. L'IA le rend possible, à condition que l'enseignant·e valide chaque fichier.*
 
@@ -67,9 +57,11 @@ L'enseignant·e a demandé un format sans tableau, pour pouvoir le copier dans u
 
 Séparément, et pour l'enseignant·e seulement, l'IA signalait les erreurs les plus fréquentes, les contenus inventés, les copies qui semblaient aidées et les textes abordant un thème personnel sensible. Rien de cela n'apparaissait dans les fichiers des élèves.
 
-![Parcours d'une copie en trois couloirs : l'élève produit, l'IA prépare le feedback et une note confidentielle, l'enseignant·e calibre, valide et envoie ; l'élève réécrit en classe. Aucun élément ne va de l'IA à l'élève sans validation de l'enseignant·e.](schemas/01-vie-d-une-copie.svg)
+![Parcours d'une copie en trois couloirs : l'élève produit, l'IA prépare le feedback et une note confidentielle, l'enseignant·e calibre, valide et envoie ; l'élève lit son feedback. Aucun élément ne va de l'IA à l'élève sans validation de l'enseignant·e.](schemas/01-vie-d-une-copie.svg)
 
-L'enseignant·e a gardé le calibrage (des notes ont été contestées, affinées ou confirmées), la décision sur les cas sensibles, l'envoi des messages et la boucle de classe : lecture d'extraits réussis, travail collectif sur les erreurs fréquentes, réécriture.
+L'enseignant·e a gardé le calibrage (des notes ont été contestées, affinées ou confirmées), la décision sur les cas sensibles, l'envoi des messages et la boucle de classe : lecture d'extraits réussis, travail collectif sur les erreurs fréquentes.
+
+Les élèves ont lu leur feedback. Ils n'avaient pas à réécrire leur texte : la correction donnait déjà toutes les réponses, et ce n'était pas l'objectif. Une autre piste de remédiation consisterait à souligner chaque erreur et à la qualifier (orthographe, temps, structure…) sans la corriger, pour que l'élève la corrige et réécrive lui-même ou elle-même. La phase [Design](02-design.md) la détaille.
 
 ## Ce qui reste fragile
 

@@ -19,7 +19,7 @@ Ce tableau est tenu par l'enseignant·e, dans un fichier personnel ou un tableur
 - **présente** : l'élève essaie, avec des erreurs ;
 - **corrigée** : le problème est résolu.
 
-![Graphique à barres empilées, données fictives pour une classe de 20 élèves : de la production 2 à la production 4, la part des priorités Next time corrigées passe de 4 à 10 élèves, et la part des priorités absentes de 9 à 3.](../schemas/09-suivi-priorites.svg)
+![Graphique à barres empilées, données fictives pour une classe de 20 élèves : de la production 2 à la production 4, la part des priorités Next time corrigées passe de 4 à 10 élèves, et la part des priorités absentes de 9 à 3.](../schemas/09-suivi-priorites.svg)
 
 *Exemple de lecture du tableau, avec des données fictives.*
 

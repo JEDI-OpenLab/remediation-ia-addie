@@ -2,9 +2,9 @@
 
 > Comment personnaliser la remédiation pour chaque élève alors que le temps de correction rend la personnalisation impraticable ?
 
-![Parcours d'une copie en trois couloirs : l'élève produit, l'IA prépare le feedback et une note confidentielle, l'enseignant·e calibre, valide et envoie ; l'élève réécrit en classe. Aucun élément ne va de l'IA à l'élève sans validation de l'enseignant·e.](schemas/01-vie-d-une-copie.svg)
+![Parcours d'une copie en trois couloirs : l'élève produit, l'IA prépare le feedback et une note confidentielle, l'enseignant·e calibre, valide et envoie ; l'élève lit son feedback. Aucun élément ne va de l'IA à l'élève sans validation de l'enseignant·e.](schemas/01-vie-d-une-copie.svg)
 
-*La vie d'une copie : l'élève produit, l'IA prépare, l'enseignant·e calibre, valide et envoie. Aucune flèche ne va de l'IA à l'élève sans passer par l'enseignant·e.*
+*La vie d'une copie : l'élève produit, l'IA prépare, l'enseignant·e relit, ajuste, valide et envoie. Aucune flèche ne va de l'IA à l'élève sans passer par l'enseignant·e.*
 
 Ce dépôt propose une **relecture ADDIE d'un retour d'expérience réel** : une séquence d'anglais en Terminale, conçue et corrigée par un·e enseignant·e avec l'aide d'une IA générative, jusqu'à un feedback individuel pour chaque élève de la classe.
 
@@ -12,19 +12,19 @@ L'objectif n'est pas de raconter un usage de l'IA, mais d'en tirer une démarche
 
 ## Ce que ce dépôt est, et ce qu'il n'est pas
 
-**C'est** une grille de lecture. L'enseignant·e n'a pas suivi ADDIE : elle ou il a itéré vite, sous contrainte de temps, avec un outil d'IA. Le modèle ADDIE sert ici à relire après coup ce qui a été fait, à nommer ce qui a fonctionné, à repérer ce qui manquait et à en faire des recommandations.
+**C'est** une explicitation. L'enseignant·e est formé·e à ADDIE et connaît le modèle. Sa pratique est experte, mais elle n'est pas décrite comme une mise en œuvre d'ADDIE : sous contrainte de temps, avec un outil d'IA, elle ou il a itéré vite, sans nommer les phases. La relecture rend visible cette démarche implicite : elle nomme ce qui a fonctionné, repère ce qui peut être consolidé et en tire des recommandations transmissibles à d'autres collègues.
 
 **Ce n'est pas** une preuve d'efficacité. Il s'agit d'une étude de cas unique. Les effets sur les apprentissages restent à mesurer ; la phase [Évaluation](05-evaluation.md) propose des indicateurs pour le faire.
 
 ## Pourquoi ADDIE
 
-ADDIE (Analyse, Design, Développement, Implémentation, Évaluation) est le modèle le plus répandu en ingénierie pédagogique. On lui reproche à juste titre d'être linéaire et lourd. Le cas étudié montre justement une version **itérative** du modèle : trois versions d'une même séance produites en une heure, deux écartées, une adoptée. L'évaluation formative traverse toutes les phases au lieu d'attendre la fin.
+ADDIE (Analyse, Design, Développement, Implémentation, Évaluation) est le modèle le plus répandu en ingénierie pédagogique. On lui reproche à juste titre d'être linéaire et lourd. Le cas montre justement ce qu'en fait une pratique experte, une version **itérative** du modèle : trois versions d'une même séance produites en une heure, deux écartées, une adoptée. L'évaluation formative traverse toutes les phases au lieu d'attendre la fin.
 
-![Cycle ADDIE en cinq phases : Analyse, Design, Développement, Implémentation, Évaluation. L'enseignant·e décide en Analyse, Design et Évaluation ; l'IA produit sous son contrôle en Développement et Implémentation. Des retours en pointillé montrent les itérations : version refusée, seuils recalibrés, séquence suivante.](schemas/08-cycle-addie.svg)
+![Cycle ADDIE en cinq phases : Analyse, Design, Développement, Implémentation, Évaluation. L'enseignant·e décide en Analyse, Design et Évaluation ; l'IA produit sous son contrôle en Développement et Implémentation. Des retours en pointillé montrent les itérations : version refusée, seuils recalibrés, séquence suivante.](schemas/08-cycle-addie.svg)
 
 *En orange, les phases où la décision appartient entièrement à l'enseignant·e ; en bleu, celles où l'IA produit et où l'enseignant·e filtre et valide. Les flèches en pointillé sont les itérations observées dans le cas.*
 
-ADDIE apporte surtout une distinction que le retour d'expérience brut ne faisait pas : celle entre **évaluer les apprentissages** (corriger les copies, donner un feedback) et **évaluer le dispositif** (vérifier que ce feedback a servi). La première relève de l'implémentation, la seconde de l'évaluation.
+Mettre la démarche en mots avec ADDIE fait surtout apparaître une distinction que le fil de travail, centré sur l'action, ne rendait pas visible : celle entre **évaluer les apprentissages** (corriger les copies, donner un feedback) et **évaluer le dispositif** (vérifier que ce feedback a servi). La première relève de l'implémentation, la seconde de l'évaluation.
 
 ## Le cas relu phase par phase
 
@@ -65,9 +65,9 @@ Chaque fichier de phase suit le même plan : **dans le cas** (ce qui s'est pass
 
 ## Le site
 
-Le guide est aussi publié sous forme de site, avec une roue ADDIE interactive et les schémas : https://jedi-openlab.github.io/remediation-ia-addie/
+Le guide est aussi publié sous forme de site, avec une roue ADDIE interactive et les schémas : https://jedi-openlab.github.io/remediation-ia-addie/
 
-Les fichiers Markdown de ce dépôt restent la seule source. Le site les reprend à chaque construction (`scripts/sync-content.mjs`) et les schémas SVG sont générés à partir de `schemas/src/`. Pour le lancer en local (Node.js 22.12 ou plus) :
+Les fichiers Markdown de ce dépôt restent la seule source. Le site les reprend à chaque construction (`scripts/sync-content.mjs`) et les schémas SVG sont générés à partir de `schemas/src/`. Pour le lancer en local (Node.js 22.12 ou plus) :
 
 ```bash
 npm install
@@ -86,7 +86,7 @@ npm run dev
 - Une tâche de production écrite évaluée sur critères.
 - Un·e enseignant·e qui reste décisionnaire à chaque phase. L'IA prépare ; l'enseignant·e décide, valide et envoie.
 
-![Répartition des tâches : l'IA transcrit, corrige, applique la grille et signale ; l'enseignant·e fixe la grille, calibre, tranche, valide et envoie.](schemas/03-qui-fait-quoi.svg)
+![Répartition des tâches : l'IA transcrit, corrige, applique la grille et signale ; l'enseignant·e fixe la grille, calibre, tranche, valide et envoie.](schemas/03-qui-fait-quoi.svg)
 
 ## Anonymisation
 

@@ -74,7 +74,7 @@ Le statut bonus réduit l'anxiété et encourage à produire. Il brouille aussi 
 
 Le format du cas applique le modèle de Hattie et Timperley : où vais-je (les critères), où en suis-je (la note commentée), quelle est la prochaine étape (Next time). Deux ajustements :
 
-![Maquette d'un fichier de feedback : le texte de l'élève annoté, une ligne par critère, une réussite nommée et une priorité. Les annotations relient chaque partie aux trois questions du feedback efficace.](schemas/02-anatomie-feedback.svg)
+![Maquette d'un fichier de feedback : le texte de l'élève annoté, une ligne par critère, une réussite nommée et une priorité. Les annotations relient chaque partie aux trois questions du feedback efficace.](schemas/02-anatomie-feedback.svg)
 
 **Moduler la correction selon les élèves.** La correction directe (l'erreur et sa correction) aide surtout les élèves les plus fragiles. Pour les autres, la correction indirecte (erreur soulignée ou codée, sans la réponse) les oblige à chercher, et c'est cette recherche qui fait progresser.
 
@@ -84,7 +84,7 @@ Le format du cas applique le modèle de Hattie et Timperley : où vais-je (les 
 | Élève intermédiaire | Mixte : directe sur les erreurs hors programme, indirecte sur les structures étudiées | Corrige seul·e les erreurs signalées |
 | Élève avancé·e | Indirecte : erreur soulignée et codée | Corrige seul·e et justifie |
 
-![Échelle de correction, de directe à indirecte : plus la correction est indirecte, plus l'élève fait lui-même le travail de correction.](schemas/05-curseur-correction.svg)
+![Échelle de correction, de directe à indirecte : plus la correction est indirecte, plus l'élève fait lui-même le travail de correction.](schemas/05-curseur-correction.svg)
 
 **Une seule priorité.** La ligne Next time ne porte qu'une priorité, formulée comme une action (« Utilise *although* pour opposer deux idées dans ton prochain texte »), pas comme un manque.
 

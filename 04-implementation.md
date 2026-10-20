@@ -19,9 +19,9 @@ Point fragile : la validation reposait sur un échantillon. Une partie des feed
 
 La chaîne complète, de la copie au message :
 
-![Parcours d'une copie en trois couloirs : l'élève produit, l'IA prépare le feedback et une note confidentielle, l'enseignant·e calibre, valide et envoie ; l'élève réécrit en classe. Aucun élément ne va de l'IA à l'élève sans validation de l'enseignant·e.](schemas/01-vie-d-une-copie.svg)
+![Parcours d'une copie en trois couloirs : l'élève produit, l'IA prépare le feedback et une note confidentielle, l'enseignant·e calibre, valide et envoie ; l'élève lit son feedback. Aucun élément ne va de l'IA à l'élève sans validation de l'enseignant·e.](schemas/01-vie-d-une-copie.svg)
 
-*La note confidentielle (en rouge) ne rejoint jamais le fichier de l'élève. La flèche en pointillé est le calibrage : si les seuils sont ajustés, l'IA régénère tout le lot.*
+*La note confidentielle (en rouge) ne rejoint jamais le fichier de l'élève. La flèche en pointillé est le calibrage : si les seuils sont ajustés, l'IA régénère tout le lot.*
 
 ### 1. Faire produire en classe
 

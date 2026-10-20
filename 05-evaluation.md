@@ -8,13 +8,13 @@ Dans ADDIE, l'évaluation porte sur le **dispositif**, pas seulement sur les él
 
 ## Dans le cas
 
-Le cas prévoyait une boucle : chaque élève reprend sa production à partir du corrigé, la classe travaille sur ses propres erreurs (Error Hunt), quelques extraits réussis sont lus, et la prochaine production reprend les critères. Il ne disposait pas encore de mesure de ce que cette boucle a produit.
+Le cas prévoyait une boucle : chaque élève lit son corrigé, la classe travaille sur ses propres erreurs (Error Hunt), quelques extraits réussis sont lus, et la prochaine production reprend les critères. Il ne disposait pas encore de mesure de ce que cette boucle a produit.
 
 ## Recommandations
 
 Deux boucles s'emboîtent : celle de l'élève, d'une production à la suivante, et celle du dispositif, d'une séquence à la suivante.
 
-![Deux boucles emboîtées : la boucle de l'élève, d'une production à la suivante, et la boucle du dispositif, d'une séquence à la suivante, nourrie par les indicateurs.](schemas/04-double-boucle.svg)
+![Deux boucles emboîtées : la boucle de l'élève, d'une production à la suivante, et la boucle du dispositif, d'une séquence à la suivante, nourrie par les indicateurs.](schemas/04-double-boucle.svg)
 
 ### 1. Boucler en classe
 

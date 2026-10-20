@@ -6,7 +6,7 @@
 
 ## Dans le cas
 
-L'analyse n'a pas été formalisée, mais elle était présente dans les demandes : le programme et l'axe visé, les pages du manuel, les contraintes horaires, l'alternance entre classe et distance, la question de savoir qui avait fait le travail précédent, les outils réellement disponibles, le risque d'usage de l'IA sur un devoir non surveillé.
+L'analyse n'a pas été écrite. Elle était pourtant bien là, comme souvent dans une pratique experte, et transparaît dans les demandes : le programme et l'axe visé, les pages du manuel, les contraintes horaires, l'alternance entre classe et distance, la question de savoir qui avait fait le travail précédent, les outils réellement disponibles, le risque d'usage de l'IA sur un devoir non surveillé.
 
 Le besoin de fond n'était pas écrit, mais il est clair : **donner à chaque élève un retour sur son propre texte**, ce que le temps de correction (dix à quinze minutes par copie pour un feedback personnalisé) rend d'ordinaire impossible.
 

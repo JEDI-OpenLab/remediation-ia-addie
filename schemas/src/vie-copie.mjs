@@ -6,7 +6,7 @@
 import { svg, R, INK, MUTE, rect, node, path, badge, text, tblock, roleIcon, lock } from './lib.mjs';
 
 export const alt =
-	"Parcours d'une copie en trois couloirs : l'élève produit, l'IA prépare le feedback et une note confidentielle, l'enseignant·e calibre, valide et envoie ; l'élève réécrit en classe. Aucun élément ne va de l'IA à l'élève sans validation de l'enseignant·e.";
+	"Parcours d'une copie en trois couloirs : l'élève produit, l'IA prépare le feedback et une note confidentielle, l'enseignant·e calibre, valide et envoie ; l'élève lit son feedback. Aucun élément ne va de l'IA à l'élève sans validation de l'enseignant·e.";
 
 export default function () {
 	const W = 1200;
@@ -21,7 +21,7 @@ export default function () {
 
 	let b = '';
 	b += text(40, 48, "La vie d'une copie", { size: 22, weight: 700 });
-	b += text(40, 76, "De la production de l'élève à sa réécriture : qui fait quoi ?", { fill: MUTE });
+	b += text(40, 76, "De la production de l'élève à la lecture de son feedback : qui fait quoi ?", { fill: MUTE });
 
 	for (const [role, { y, h }] of Object.entries(lanes)) {
 		const r = R[role];
@@ -45,8 +45,8 @@ export default function () {
 	b += path(`M${c[3]},${iaUp - 37} V${ensY + 51}`, { color: R.conf.s, marker: 'conf' });
 	b += path(`M${c[3] + BW / 2},${iaLow} H${c[4] - 20} V${ensY + 51}`, { color: R.ia.s, marker: 'ia' });
 	b += path(`M${c[4] + 20},${ensY + 48} V640 H${c[2]} V${iaMid + 63}`, { color: R.ens.s, marker: 'ens', dash: '7 6' });
-	b += path(`M${c[4] + BW / 2},${ensY} H${c[5] - 65 - 3}`, { color: R.ens.s, marker: 'ens' });
-	b += path(`M${c[5]},${ensY - 48} V${elY + 44}`, { color: R.ens.s, marker: 'ens' });
+	b += path(`M${c[4] + BW / 2},${ensY} H${c[5] - 70 - 3}`, { color: R.ens.s, marker: 'ens' });
+	b += path(`M${c[5]},${ensY - 48} V${elY + 52}`, { color: R.ens.s, marker: 'ens' });
 
 	b += tblock(c[3], 664, [{ t: "seuils ajustés : l'IA régénère tout le lot", fill: R.ens.t }]);
 
@@ -57,9 +57,9 @@ export default function () {
 	b += node(c[3], iaUp, BW, 74, 'conf', ['Note', 'confidentielle'], ["pour l'enseignant·e"], { fill: R.conf.f });
 	b += node(c[3], iaLow, BW, 74, 'ia', 'Fichier élève', ['projet de feedback']);
 	b += node(c[3], ensY, BW, 96, 'conf', ['Tranche les', 'cas sensibles'], ['entretien, réponse', 'humaine'], { fill: R.conf.f });
-	b += node(c[4], ensY, BW, 96, 'ens', ['Calibre', 'puis valide'], ['3 copies, puis', 'chaque fichier']);
-	b += node(c[5], ensY, 130, 96, 'ens', 'Envoie', ['le message', 'individuel']);
-	b += node(c[5], elY, 130, 84, 'el', 'Lit et réécrit', ['en classe']);
+	b += node(c[4], ensY, BW, 96, 'ens', ['Relit, ajuste', 'et valide'], ['des copies de', 'niveaux différents']);
+	b += node(c[5], ensY, 140, 96, 'ens', 'Envoie', ['le message', 'individuel']);
+	b += node(c[5], elY, 140, 100, 'el', ['Lit son', 'feedback'], ['Well done,', 'Next time']);
 
 	const corner = (cx, cy, w, h) => [cx - w / 2 + 4, cy - h / 2 + 4];
 	b += badge(...corner(c[0], elY, BW, 84), 1, 'el');
@@ -67,8 +67,8 @@ export default function () {
 	b += badge(...corner(c[2], iaMid, BW, 122), 3, 'ia');
 	b += badge(...corner(c[3], iaLow, BW, 74), 4, 'ia');
 	b += badge(...corner(c[4], ensY, BW, 96), 5, 'ens');
-	b += badge(...corner(c[5], ensY, 130, 96), 6, 'ens');
-	b += badge(...corner(c[5], elY, 130, 84), 7, 'el');
+	b += badge(...corner(c[5], ensY, 140, 96), 6, 'ens');
+	b += badge(...corner(c[5], elY, 140, 100), 7, 'el');
 	for (const [cx, cy, h] of [
 		[c[3], iaUp, 74],
 		[c[3], ensY, 96],
