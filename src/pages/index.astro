@@ -22,12 +22,6 @@ const etapes = [
 	{ t: 'Valider et envoyer', d: 'L’enseignant·e ajuste des notes, tranche les cas sensibles, relit les fichiers et les envoie. Les élèves lisent leur feedback.' },
 ];
 
-const fragiles = [
-	{ t: 'Des notes élevées', d: 'Le statut bonus du travail à distance et des critères qui récompensent la présence plus que la qualité.', p: 'design' },
-	{ t: 'Des copies en ligne', d: "Des productions d'élèves, parfois très personnelles, ont transité par un outil en ligne.", p: 'analyse' },
-	{ t: 'Un effet non mesuré', d: 'Rien ne mesure encore si le feedback a servi.', p: 'evaluation' },
-];
-
 const gabarits = [
 	{ t: 'Consignes pour l’IA', d: 'Une consigne par étape, de l’analyse à la boucle de classe.', p: 'gabarits/prompts' },
 	{ t: 'Grille critériée', d: 'La démarche pour construire ses critères et ses descripteurs, avec un exemple.', p: 'gabarits/grille-criteriee' },
@@ -154,25 +148,6 @@ const gabarits = [
 				production à l'autre.
 			</p>
 			<a class="more" href={u('design/#5-concevoir-le-feedback')}>Concevoir le feedback, phase Design →</a>
-		</section>
-
-		<section>
-			<p class="kicker">Ce qui reste fragile</p>
-			<h2>Trois questions ouvertes par le cas</h2>
-			<ol class="cards five">
-				{
-					fragiles.map((f, i) => (
-						<li>
-							<a href={u(`${f.p}/`)}>
-								<span class="num">{i + 1}</span>
-								<strong>{f.t}</strong>
-								<span>{f.d}</span>
-								<em>→ {f.p === 'implementation' ? 'Implémentation' : f.p === 'evaluation' ? 'Évaluation' : f.p.charAt(0).toUpperCase() + f.p.slice(1)}</em>
-							</a>
-						</li>
-					))
-				}
-			</ol>
 		</section>
 
 		<section>

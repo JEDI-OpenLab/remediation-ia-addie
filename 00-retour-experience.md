@@ -56,11 +56,3 @@ Séparément, et pour l'enseignant·e seulement, l'IA signalait les erreurs les 
 L'enseignant·e a gardé le calibrage (des notes ont été contestées, affinées ou confirmées), la décision sur les cas sensibles et l'envoi des messages.
 
 Les élèves ont lu leur feedback. Ils n'avaient pas à réécrire leur texte : la correction donnait déjà toutes les réponses, et ce n'était pas l'objectif. Une autre piste de remédiation consisterait à souligner chaque erreur et à la qualifier (orthographe, temps, structure…) sans la corriger, pour que l'élève la corrige et réécrive lui-même ou elle-même. La phase [Design](02-design.md) la détaille.
-
-## Ce qui reste fragile
-
-Le cas laisse trois questions ouvertes, reprises dans les phases suivantes :
-
-1. Les notes, comprises entre 12,5 et 19,5 sur 20, sont élevées. Le statut bonus du travail à distance et des critères qui récompensent la présence d'un élément plus que sa qualité l'expliquent. → [Design](02-design.md)
-2. Des copies d'élèves, dont certaines manuscrites et certaines très personnelles, ont transité par un outil en ligne. → [Analyse](01-analyse.md)
-3. Rien ne permet encore de mesurer si le feedback a servi. → [Évaluation](05-evaluation.md)
