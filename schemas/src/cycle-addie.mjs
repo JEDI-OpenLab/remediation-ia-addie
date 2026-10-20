@@ -6,7 +6,7 @@
 import { svg, R, INK, MUTE, rect, text, tblock, path, arc, polar, sector } from './lib.mjs';
 
 export const alt =
-	"Cycle ADDIE en cinq phases : Analyse, Design, Développement, Implémentation, Évaluation. L'enseignant·e décide en Analyse, Design et Évaluation ; l'IA produit sous son contrôle en Développement et Implémentation. Des retours en pointillé montrent les itérations : version refusée, seuils recalibrés, séquence suivante.";
+	"Cycle ADDIE en cinq phases : Analyse, Design, Développement, Implémentation, Évaluation. L'enseignant·e décide en Analyse, Design et Évaluation ; l'IA produit sous son contrôle en Développement et Implémentation. Des retours en pointillé montrent les itérations : support simplifié, seuils recalibrés, séquence suivante.";
 
 export const PHASES = [
 	{ n: 1, name: 'Analyse', role: 'ens', lines: ['besoins, contraintes,', 'données'] },
@@ -43,10 +43,8 @@ export default function () {
 
 	// Centre
 	b += tblock(cx, cy, [
-		{ t: 'Évaluation', weight: 700 },
-		{ t: 'formative', weight: 700 },
-		{ t: 'à chaque', fill: MUTE },
-		{ t: 'itération', fill: MUTE },
+		{ t: 'ADDIE', size: 20, weight: 700 },
+		{ t: 'itératif', fill: MUTE },
 	]);
 
 	// Itérations observées (retours en arrière, pointillés)
@@ -59,7 +57,7 @@ export default function () {
 		s += tblock(lx, ly, [{ t: label, weight: 700 }], { anchor: side });
 		return s;
 	};
-	b += back(2, 1, 'version refusée', 'start');
+	b += back(2, 1, 'support simplifié', 'start');
 	b += back(3, 2, 'seuils recalibrés', 'middle');
 	const [sx, sy] = polar(cx, cy, r1 + 22, -126);
 	b += tblock(sx, sy, [{ t: 'séquence suivante', weight: 700 }], { anchor: 'end' });

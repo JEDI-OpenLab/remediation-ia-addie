@@ -18,9 +18,9 @@ L'objectif n'est pas de raconter un usage de l'IA, mais d'en tirer une démarche
 
 ## Pourquoi ADDIE
 
-ADDIE (Analyse, Design, Développement, Implémentation, Évaluation) est le modèle le plus répandu en ingénierie pédagogique. On lui reproche à juste titre d'être linéaire et lourd. Le cas montre justement ce qu'en fait une pratique experte, une version **itérative** du modèle : trois versions d'une même séance produites en une heure, deux écartées, une adoptée. L'évaluation formative traverse toutes les phases au lieu d'attendre la fin.
+ADDIE (Analyse, Design, Développement, Implémentation, Évaluation) est le modèle le plus répandu en ingénierie pédagogique. On lui reproche à juste titre d'être linéaire et lourd. Une pratique experte en fait une version **itérative** : on revient en arrière quand un support est trop complexe, ou quand des notes paraissent mal calibrées.
 
-![Cycle ADDIE en cinq phases : Analyse, Design, Développement, Implémentation, Évaluation. L'enseignant·e décide en Analyse, Design et Évaluation ; l'IA produit sous son contrôle en Développement et Implémentation. Des retours en pointillé montrent les itérations : version refusée, seuils recalibrés, séquence suivante.](schemas/08-cycle-addie.svg)
+![Cycle ADDIE en cinq phases : Analyse, Design, Développement, Implémentation, Évaluation. L'enseignant·e décide en Analyse, Design et Évaluation ; l'IA produit sous son contrôle en Développement et Implémentation. Des retours en pointillé montrent les itérations : support simplifié, seuils recalibrés, séquence suivante.](schemas/08-cycle-addie.svg)
 
 *En orange, les phases où la décision appartient entièrement à l'enseignant·e ; en bleu, celles où l'IA produit et où l'enseignant·e filtre et valide. Les flèches en pointillé sont les itérations observées dans le cas.*
 
@@ -31,10 +31,10 @@ Mettre la démarche en mots avec ADDIE fait surtout apparaître une distinction 
 | Phase | Ce que montre le cas | Ce que ce dépôt ajoute |
 |---|---|---|
 | [Analyse](01-analyse.md) | Programme, contraintes horaires, travail à distance, risque d'usage de l'IA par les élèves | Un diagnostic explicite des besoins ; le cadre de protection des données posé dès le départ |
-| [Design](02-design.md) | Une problématique, une sous-question par semaine, une grille annoncée, des notes bonus | Une grille avec descripteurs de niveau ; un feedback modulé selon les élèves |
-| [Développement](03-developpement.md) | Supports produits avec l'IA, versions refusées, vérification des contenus | Des critères de refus explicites ; la vérification des sources comme règle |
+| [Design](02-design.md) | Une problématique, une sous-question par semaine, une grille annoncée, des notes bonus pour le travail à distance | Une grille avec descripteurs de niveau ; un feedback modulé selon les élèves |
+| [Développement](03-developpement.md) | Supports produits avec l'IA, simplifiés à la demande, vérification des contenus | Des critères de refus explicites ; la vérification des sources comme règle |
 | [Implémentation](04-implementation.md) | Production en classe, collecte, feedback individuel envoyé à chaque élève | Une checklist de validation de chaque fichier avant envoi |
-| [Évaluation](05-evaluation.md) | Boucle de classe (Error Hunt, priorités reprises) | Des indicateurs pour évaluer le dispositif lui-même |
+| [Évaluation](05-evaluation.md) | Un feedback individuel lu par chaque élève, sans mesure de son effet | Une boucle de classe (Error Hunt) et des indicateurs pour évaluer le dispositif lui-même |
 
 Le cas complet, anonymisé, est dans [00-retour-experience.md](00-retour-experience.md).
 
@@ -51,7 +51,7 @@ remediation-ia-addie/
 ├── 05-evaluation.md
 ├── gabarits/
 │   ├── prompts.md               consignes à donner à l'IA, phase par phase
-│   ├── grille-criteriee.md      modèle de grille avec descripteurs
+│   ├── grille-criteriee.md      construire une grille, avec un exemple
 │   ├── modele-feedback.md       format du fichier individuel
 │   ├── checklist-validation.md  relecture avant envoi
 │   └── suivi-priorites.md       suivi des priorités de chaque élève
@@ -90,7 +90,7 @@ npm run dev
 
 ## Anonymisation
 
-L'enseignant·e, la classe et l'établissement ne sont pas identifiés. Aucun extrait de copie réelle n'est reproduit : les exemples sont reconstruits. Les gabarits ont été généralisés à partir des consignes qui ont fonctionné dans le cas.
+L'enseignant·e, la classe et l'établissement ne sont pas identifiés. Aucun extrait de copie réelle n'est reproduit : les exemples sont reconstruits. Les consignes pour l'IA et le modèle de feedback sont généralisés à partir de ceux qui ont fonctionné dans le cas. La grille avec descripteurs, la checklist de validation, le suivi des priorités et les consignes « Boucle de classe » et « Coder la reprise des priorités » sont des propositions de ce guide.
 
 ## Licence et citation
 

@@ -43,7 +43,7 @@ C'est le point que le cas a traité trop tard. Les productions d'élèves mineur
 
 ### 5. Anticiper l'usage de l'IA par les élèves
 
-Aucun détecteur n'est fiable, et les indices stylistiques ne prouvent rien. La réponse est de conception, à préparer dès l'analyse : faire produire en classe, lier les critères à des contenus vus ensemble, ne rien noter de ce qui est fait sans surveillance.
+Aucun détecteur n'est fiable, et les indices stylistiques ne prouvent rien. Plutôt que de chercher à repérer l'usage de l'IA après coup, mieux vaut organiser la séquence pour qu'il ne serve à rien, et le prévoir dès l'analyse : faire produire en classe, lier les critères à des contenus vus ensemble, ne rien noter de ce qui est fait sans surveillance.
 
 ## Outils
 

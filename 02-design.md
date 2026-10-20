@@ -11,10 +11,12 @@ Le design est la force du cas :
 - une **problématique** de séquence, déclinée en une sous-question par semaine, à laquelle répondent les documents de la semaine ;
 - une **tâche de production** à chaque séance ;
 - une **grille critériée** donnée avec la consigne ;
-- des notes au statut **bonus** ;
+- des notes au statut **bonus** pour le travail fait à distance ;
 - un format de **feedback** défini à l'avance (texte corrigé, note par critère, Well done, Next time).
 
-Deux faiblesses : une grille dont plusieurs critères récompensaient la présence d'un élément plus que sa qualité, et un feedback qui corrigeait tout, ce qui laissait peu de travail à l'élève.
+Une faiblesse : une grille dont plusieurs critères récompensaient la présence d'un élément plus que sa qualité.
+
+Le feedback corrigeait tout : c'était un choix, celui de la correction directe, sans réécriture demandée aux élèves. La correction indirecte, où l'élève corrige lui-même ou elle-même les erreurs signalées puis réécrit, est une autre forme de remédiation, présentée plus bas.
 
 ## Recommandations
 
@@ -61,11 +63,11 @@ C'est la principale correction apportée au cas. Une grille qui dit seulement «
 - Au moins un critère lié à une **structure enseignée**.
 - Des descripteurs observables, compréhensibles par les élèves.
 
-Voir le modèle : [gabarits/grille-criteriee.md](gabarits/grille-criteriee.md).
+Voir la démarche et un exemple : [gabarits/grille-criteriee.md](gabarits/grille-criteriee.md).
 
 ### 4. Décider du statut de la note
 
-Le statut bonus réduit l'anxiété et encourage à produire. Il brouille aussi le signal de la note : tout le monde a « bien ». Deux options cohérentes :
+Dans le cas, le bonus concernait le travail fait à distance, sans surveillance. Ce statut réduit l'anxiété et encourage à produire. Il brouille aussi le signal de la note : tout le monde a « bien ». Deux options cohérentes :
 
 - garder le bonus, mais calibrer la grille pour que la note reste informative ;
 - ou dissocier : feedback sans note sur les productions intermédiaires, note sur la production finale seulement.
@@ -74,7 +76,9 @@ Le statut bonus réduit l'anxiété et encourage à produire. Il brouille aussi 
 
 Le format du cas applique le modèle de Hattie et Timperley : où vais-je (les critères), où en suis-je (la note commentée), quelle est la prochaine étape (Next time). Deux ajustements :
 
-![Maquette d'un fichier de feedback : le texte de l'élève annoté, une ligne par critère, une réussite nommée et une priorité. Les annotations relient chaque partie aux trois questions du feedback efficace.](schemas/02-anatomie-feedback.svg)
+![Maquette d'un fichier de feedback inventé, sans lien avec les copies de la classe : le texte de l'élève annoté, une ligne par critère, une réussite nommée et une priorité. Les annotations relient chaque partie aux trois questions du feedback efficace.](schemas/02-anatomie-feedback.svg)
+
+*Exemple inventé pour illustrer le format : il n'a aucun lien avec les copies de la classe.*
 
 **Moduler la correction selon les élèves.** La correction directe (l'erreur et sa correction) aide surtout les élèves les plus fragiles. Pour les autres, la correction indirecte (erreur soulignée ou codée, sans la réponse) les oblige à chercher, et c'est cette recherche qui fait progresser.
 
@@ -84,7 +88,9 @@ Le format du cas applique le modèle de Hattie et Timperley : où vais-je (les 
 | Élève intermédiaire | Mixte : directe sur les erreurs hors programme, indirecte sur les structures étudiées | Corrige seul·e les erreurs signalées |
 | Élève avancé·e | Indirecte : erreur soulignée et codée | Corrige seul·e et justifie |
 
-![Échelle de correction, de directe à indirecte : plus la correction est indirecte, plus l'élève fait lui-même le travail de correction.](schemas/05-curseur-correction.svg)
+![Échelle de correction, de directe à indirecte, illustrée par une phrase inventée : plus la correction est indirecte, plus l'élève fait lui-même le travail de correction.](schemas/05-curseur-correction.svg)
+
+*Exemple inventé pour illustrer le format : il n'a aucun lien avec les copies de la classe.*
 
 **Une seule priorité.** La ligne Next time ne porte qu'une priorité, formulée comme une action (« Utilise *although* pour opposer deux idées dans ton prochain texte »), pas comme un manque.
 

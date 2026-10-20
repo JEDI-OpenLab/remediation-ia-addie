@@ -8,7 +8,7 @@ Dans ADDIE, l'évaluation porte sur le **dispositif**, pas seulement sur les él
 
 ## Dans le cas
 
-Le cas prévoyait une boucle : chaque élève lit son corrigé, la classe travaille sur ses propres erreurs (Error Hunt), quelques extraits réussis sont lus, et la prochaine production reprend les critères. Il ne disposait pas encore de mesure de ce que cette boucle a produit.
+Le cas s'arrête à l'envoi et à la lecture du feedback individuel. Il ne comportait pas d'Error Hunt et ne mesurait pas ce que le feedback a produit. La boucle de classe proposée ci-dessous est donc une piste pour prolonger le dispositif, pas une description du cas.
 
 ## Recommandations
 
@@ -21,14 +21,10 @@ Deux boucles s'emboîtent : celle de l'élève, d'une production à la suivante
 Un temps de cours, à placer dans la semaine qui suit l'envoi :
 
 1. chaque élève lit son fichier et réécrit le passage le plus faible (en corrigeant lui-même ce qui était seulement signalé) ;
-2. la classe corrige un Error Hunt de dix phrases construit sur ses propres erreurs, les plus fréquentes d'abord ;
+2. la classe corrige un Error Hunt de dix phrases construit sur ses propres erreurs, les plus fréquentes d'abord. Les enseignant·es de langues qui le pratiquent sur les erreurs récurrentes de leur classe le jugent très efficace ;
 3. deux ou trois extraits réussis, anonymisés, sont lus, chacun illustrant un critère de la grille.
 
-### 2. Évaluer en continu, pas seulement à la fin
-
-Le cas montre une évaluation formative du dispositif à chaque itération : chaque version refusée est une évaluation. Garder une trace simple de ces décisions (ce qui a été refusé, pourquoi) nourrit l'analyse de la séquence suivante.
-
-### 3. Mesurer quelques indicateurs simples
+### 2. Mesurer quelques indicateurs simples
 
 | Indicateur | Comment le mesurer | Ce qu'il dit |
 |---|---|---|
@@ -38,9 +34,9 @@ Le cas montre une évaluation formative du dispositif à chaque itération : ch
 | **Temps enseignant** | Minutes par copie, avant et après | Le gain de temps est-il réel ? |
 | **Réception par les élèves** | Quelques questions courtes : avez-vous lu ? compris ? utilisé ? | Le feedback est-il crédible à leurs yeux ? |
 
-Le premier indicateur est le plus important et le plus simple : il se lit directement dans le [tableau de suivi des priorités](gabarits/suivi-priorites.md).
+Le premier indicateur est le plus important. Codé à la main, il serait beaucoup trop long à relever pour toute une classe : on le fait préparer par l'IA (gabarit « Coder la reprise des priorités » dans [gabarits/prompts.md](gabarits/prompts.md)), on vérifie quelques élèves, puis on reporte le résultat dans le [tableau de suivi des priorités](gabarits/suivi-priorites.md).
 
-### 4. Revenir à l'analyse
+### 3. Revenir à l'analyse
 
 Les résultats nourrissent la séquence suivante :
 

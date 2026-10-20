@@ -2,7 +2,7 @@
 
 [← Sommaire](../README.md)
 
-Ces consignes généralisent celles qui ont fonctionné dans le cas. Elles sont courtes parce que les consignes efficaces données à l'IA ressemblent aux consignes efficaces données aux élèves : une intention, des contraintes, un format de sortie.
+Ces consignes généralisent celles qui ont fonctionné dans le cas, sauf « Boucle de classe » et « Coder la reprise des priorités » : ces deux-là ne viennent pas du cas, ce sont des pistes pour prolonger le dispositif. Elles sont courtes parce que les consignes efficaces données à l'IA ressemblent aux consignes efficaces données aux élèves : une intention, des contraintes, un format de sortie.
 
 Les éléments entre crochets sont à remplacer.
 
@@ -48,11 +48,11 @@ Les éléments entre crochets sont à remplacer.
 
 ### Remédiation personnalisée
 
-> Voici la grille sur [barème], le document source et les textes des élèves, identifiés par un numéro. Pour chaque élève, produis un fichier : le texte intégral avec [pour les élèves listés en correction directe : chaque erreur barrée et la correction en rouge] [pour les élèves listés en correction indirecte : chaque erreur soulignée avec son code, sans la correction] ; puis l'évaluation en lignes simples, sans tableau, pour que je puisse la copier dans un message : chaque critère avec la note et un commentaire d'une phrase, le total, une ligne Well done qui nomme une réussite précise, et une ligne Next time avec une seule priorité formulée comme une action. Applique les mêmes seuils à toutes les copies. Ne corrige pas ce qui relève du style si l'énoncé est correct.
+> Voici la grille sur [barème], le document source et les textes des élèves, identifiés par un numéro. Pour chaque élève, produis un fichier : le texte intégral avec [pour les élèves listés en correction directe : chaque erreur barrée et la correction en rouge] [pour les élèves listés en correction indirecte : chaque erreur de langue soulignée avec son code, sans la correction, et chaque problème d'organisation ou de cohérence signalé par une phrase de commentaire sur le passage concerné] ; puis l'évaluation dans un tableau, une ligne par critère : chaque critère avec la note et un commentaire d'une phrase, le total, une ligne Well done qui nomme une réussite précise, et une ligne Next time avec une seule priorité formulée comme une action. Applique les mêmes seuils à toutes les copies. Ne corrige pas ce qui relève du style si l'énoncé est correct.
 >
 > À part, pour moi seulement : les dix erreurs les plus fréquentes, les contenus inventés par rapport au document source, les copies qui posent question, et les textes qui abordent un thème personnel sensible. N'écris rien de tout cela dans les fichiers des élèves.
 
-Liste des codes d'erreur à fournir à l'IA pour la correction indirecte (à adapter) : **T** temps, **A** accord, **O** ordre des mots, **V** vocabulaire, **P** préposition, **S** structure étudiée, **Orth** orthographe.
+Les codes d'erreur ne conviennent qu'aux erreurs de **microstructure**, celles qui se repèrent dans une phrase : temps, accord, ordre des mots, préposition, orthographe, structure étudiée. Les erreurs de **macrostructure** (organisation du texte, enchaînement des idées, cohérence, réponse à la consigne) ne se réduisent pas à un code : elles demandent une phrase de commentaire. Toute liste de codes reste donc réductrice. Mieux vaut en garder peu, ceux que les élèves connaissent déjà, et les fournir à l'IA avec leur définition. Exemple à adapter : **T** temps, **A** accord, **O** ordre des mots, **V** vocabulaire, **P** préposition, **S** structure étudiée, **Orth** orthographe.
 
 ### Ajouter des copies après coup
 
@@ -67,3 +67,5 @@ Liste des codes d'erreur à fournir à l'IA pour la correction indirecte (à ada
 ### Coder la reprise des priorités
 
 > Voici, pour chaque élève, la priorité Next time de la production précédente et sa nouvelle production. Pour chaque élève, indique si la priorité est absente (le problème n'est pas traité), présente (l'élève essaie, avec des erreurs) ou corrigée (le problème est résolu), avec la phrase du texte qui le montre.
+
+À la main, ce codage serait trop long pour une classe entière. Vérifier le codage de quelques élèves, puis reporter le résultat dans le [tableau de suivi des priorités](suivi-priorites.md).

@@ -5,14 +5,14 @@
 import { svg, R, INK, MUTE, rect, text, tblock } from './lib.mjs';
 
 export const alt =
-	"Échelle de correction, de directe à indirecte : plus la correction est indirecte, plus l'élève fait lui-même le travail de correction.";
+	"Échelle de correction, de directe à indirecte, illustrée par une phrase inventée : plus la correction est indirecte, plus l'élève fait lui-même le travail de correction.";
 
 const RED = '#C62828';
 const GREY = '#8C8C8C';
 
 export default function () {
 	const W = 960;
-	const H = 545;
+	const H = 580;
 	const xs = [330, 585, 840];
 	let b = '';
 
@@ -66,6 +66,8 @@ export default function () {
 	b += `<path d="M${xs[2] + 40},440 L${xs[2] + 70},466 L${xs[2] + 40},492 Z" fill="${R.el.s}"/>`;
 	b += tblock(40, 466, [{ t: "Effort de", weight: 700, fill: R.el.t }, { t: "l'élève", weight: 700, fill: R.el.t }], { anchor: 'start' });
 	b += text(xs[1], 520, "plus la correction est indirecte, plus l'élève corrige lui-même", { anchor: 'middle', fill: INK, weight: 600 });
+
+	b += text(xs[1], 562, "Phrase inventée pour illustrer les types de correction, sans lien avec les copies de la classe.", { anchor: 'middle', fill: MUTE });
 
 	return svg({ w: W, h: H, title: 'Le curseur de correction', desc: alt, body: b });
 }

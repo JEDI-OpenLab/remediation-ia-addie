@@ -7,7 +7,7 @@
 import { svg, INK, MUTE, rect, text } from './lib.mjs';
 
 export const alt =
-	"Graphique à barres empilées, données fictives pour une classe de 20 élèves : de la production 2 à la production 4, la part des priorités Next time corrigées passe de 4 à 10 élèves, et la part des priorités absentes de 9 à 3.";
+	"Graphique à barres empilées, données inventées, sans lien avec la classe du cas : de la production 2 à la production 4, la part des priorités Next time corrigées passe de 4 à 10 élèves, et la part des priorités absentes de 9 à 3.";
 
 const DATA = [
 	{ label: 'Production 2', v: [9, 7, 4] },
@@ -27,7 +27,7 @@ export default function () {
 	let b = '';
 
 	b += text(40, 46, 'Reprise des priorités Next time', { size: 20, weight: 700 });
-	b += text(40, 72, "Classe de 20 élèves, trois productions successives. Données fictives.", { fill: MUTE });
+	b += text(40, 72, "Données inventées, sans lien avec la classe du cas : trois productions successives.", { fill: MUTE });
 
 	// Légende
 	let lx = x0;
@@ -54,5 +54,5 @@ export default function () {
 	b += `<line x1="${x0}" y1="132" x2="${x0}" y2="356" stroke="#BDBDBD" stroke-width="1"/>`;
 	b += text(40, 396, 'Lecture attendue : la part des priorités corrigées augmente d\'une production à la suivante.', { weight: 600 });
 
-	return svg({ w: W, h: H, title: 'Reprise des priorités Next time (données fictives)', desc: alt, body: b });
+	return svg({ w: W, h: H, title: 'Reprise des priorités Next time (données inventées)', desc: alt, body: b });
 }

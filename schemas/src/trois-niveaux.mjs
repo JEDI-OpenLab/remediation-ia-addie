@@ -13,7 +13,7 @@ export default function () {
 	const H = 540;
 	const cards = [
 		{ x: 30, title: 'Différencier', sub: ['des supports variés', 'pour des profils'], cost: 1, costTxt: 'quelques supports' },
-		{ x: 340, title: 'Individualiser', sub: ['des groupes de besoin', '(un Error Hunt pour la classe)'], cost: 2, costTxt: 'une activité par groupe' },
+		{ x: 340, title: 'Individualiser', sub: ['des groupes de besoin,', 'une activité par groupe'], cost: 2, costTxt: 'quelques activités' },
 		{ x: 650, title: 'Personnaliser', sub: ['une réponse par élève,', 'sur son propre texte'], cost: 3, costTxt: '10 à 15 min par copie' },
 	];
 	const CW = 280;

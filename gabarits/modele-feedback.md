@@ -2,11 +2,11 @@
 
 [← Sommaire](../README.md) · [Phase Design](../02-design.md) · [Phase Implémentation](../04-implementation.md)
 
-Le fichier a deux parties : le texte de l'élève annoté, puis l'évaluation en lignes simples, sans tableau, pour pouvoir la copier dans un message.
+Le fichier a deux parties : le texte de l'élève annoté, puis l'évaluation dans un tableau, une ligne par critère.
 
-![Maquette d'un fichier de feedback : le texte de l'élève annoté, une ligne par critère, une réussite nommée et une priorité. Les annotations relient chaque partie aux trois questions du feedback efficace.](../schemas/02-anatomie-feedback.svg)
+![Maquette d'un fichier de feedback inventé, sans lien avec les copies de la classe : le texte de l'élève annoté, une ligne par critère, une réussite nommée et une priorité. Les annotations relient chaque partie aux trois questions du feedback efficace.](../schemas/02-anatomie-feedback.svg)
 
-L'exemple ci-dessous est **entièrement fictif**.
+> **Exemple inventé pour illustrer le format.** Il n'a aucun lien avec les copies de la classe : ni le texte, ni le destinataire (« Sam »), ni les notes ne viennent du cas.
 
 ## Version correction directe (élève en difficulté sur la langue)
 
@@ -19,12 +19,14 @@ Yesterday we ~~watch~~ **watched** a short film about a man who ~~search~~ **is 
 
 ### Ton évaluation
 
-Réalisation de la tâche : 3/4. Ta lettre s'adresse bien à Sam et raconte le film.
-Appui sur le document : 2/4. Tu parles du film en général ; cite une scène précise.
-Structure étudiée : 1/3. Tu utilises « If I… I would », mais il faut le prétérit après if : « If I were ».
-Correction de la langue : 2/4. Revois le prétérit des verbes réguliers (-ed).
-Lexique : 2/3. Vocabulaire simple et juste.
-Organisation : 1/2. Utilise davantage de connecteurs.
+| Critère | Note | Commentaire |
+|---|---|---|
+| Réalisation de la tâche | 3/4 | Ta lettre s'adresse bien à Sam et raconte le film. |
+| Appui sur le document | 2/4 | Tu parles du film en général ; cite une scène précise. |
+| Structure étudiée | 1/3 | Tu utilises « If I… I would », mais il faut le prétérit après if : « If I were ». |
+| Correction de la langue | 2/4 | Revois le prétérit des verbes réguliers (-ed). |
+| Lexique | 2/3 | Vocabulaire simple et juste. |
+| Organisation | 1/2 | Utilise davantage de connecteurs. |
 
 Total : 11/20 (note bonus)
 

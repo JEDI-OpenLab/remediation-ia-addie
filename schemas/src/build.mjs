@@ -12,7 +12,6 @@ import quiFaitQuoi from './qui-fait-quoi.mjs';
 import doubleBoucle from './double-boucle.mjs';
 import curseurCorrection from './curseur-correction.mjs';
 import troisNiveaux from './trois-niveaux.mjs';
-import entonnoir from './entonnoir.mjs';
 import cycleAddie from './cycle-addie.mjs';
 import suiviPriorites from './suivi-priorites.mjs';
 
@@ -24,7 +23,6 @@ const schemas = {
 	'04-double-boucle': doubleBoucle,
 	'05-curseur-correction': curseurCorrection,
 	'06-differencier-individualiser-personnaliser': troisNiveaux,
-	'07-ia-enrichit-enseignant-reduit': entonnoir,
 	'08-cycle-addie': cycleAddie,
 	'09-suivi-priorites': suiviPriorites,
 };

@@ -6,14 +6,12 @@
 
 ## Dans le cas
 
-L'IA a produit des lots complets par séance : fiche élève, déroulé minuté avec les phrases à dire, diaporama court, corrigé. L'enseignant·e a filtré systématiquement. Sur une séance, trois versions ont été produites et deux écartées.
+L'IA a produit des lots complets par séance : fiche élève, déroulé minuté avec les phrases à dire, diaporama court, corrigé. L'enseignant·e a filtré ces propositions et demandé de simplifier quand elles étaient trop complexes.
 
 Deux enseignements :
 
-1. **L'IA enrichit, l'enseignant·e réduit.** L'IA ajoute spontanément des rôles, des étapes, des supports. La version retenue est presque toujours la plus simple.
+1. **L'IA complique, l'enseignant·e simplifie.** Les propositions de l'IA étaient parfois trop complexes (« Parfois ce que tu fais est trop complexe ») ; l'enseignant·e demandait de les simplifier.
 2. **L'IA invente si on la laisse faire.** Le premier corrigé d'un film comportait des approximations ; il a fallu exiger que l'IA examine le film lui-même.
-
-![Entonnoir : la proposition de l'IA, chargée de groupes, de rôles, de cartes et d'un tournoi, passe trois filtres de l'enseignant·e (simplicité, faisabilité, vérification). La version retenue est une fiche unique ; la version 1 est refusée, la version 3 décline la version retenue à distance.](schemas/07-ia-enrichit-enseignant-reduit.svg)
 
 ## Recommandations
 
@@ -27,7 +25,7 @@ Fiche élève, déroulé, diaporama, corrigé : produits ensemble, ils restent 
 
 ### 3. Filtrer avec des critères de refus explicites
 
-Le cas montre que l'expertise de l'enseignant·e se joue surtout ici. On la rend transmissible en écrivant ses critères de refus. Une proposition est refusée si :
+L'expertise de l'enseignant·e se joue en bonne partie ici. On la rend transmissible en écrivant ses critères de refus. Une proposition est refusée si :
 
 - [ ] une consigne dépasse deux lignes ou contient deux actions ;
 - [ ] un bloc demande plus d'une tâche ;

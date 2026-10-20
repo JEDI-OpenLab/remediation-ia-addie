@@ -11,9 +11,7 @@ Cette phase contient l'évaluation **des apprentissages** : la correction des c
 - Production en classe quand c'était possible ; à distance, seule la production finale était demandée, par photo ou texte, avec une échéance courte.
 - Les productions ont été rassemblées en un seul lot ; les manuscrits ont été transcrits par l'IA.
 - L'IA a produit un fichier par élève et, séparément, une note pour l'enseignant·e (erreurs fréquentes, contenus inventés, copies suspectes, thèmes sensibles).
-- L'enseignant·e a relu quelques fichiers de niveaux différents, ajusté des notes, tranché les cas sensibles et envoyé les messages.
-
-Point fragile : la validation reposait sur un échantillon. Une partie des feedbacks est partie sous le nom de l'enseignant·e sans avoir été relue.
+- L'enseignant·e a relu les fichiers, ajusté des notes, tranché les cas sensibles et envoyé les messages.
 
 ## Recommandations
 
@@ -51,7 +49,7 @@ Rien de la seconde sortie ne doit apparaître dans la première.
 - une priorité Next time qui ne correspond pas à la principale difficulté du texte ;
 - un ton inadapté à l'élève.
 
-Compter deux à trois minutes par fichier. C'est plus que la minute envisagée dans le cas, et bien moins que les dix à quinze minutes d'un feedback personnalisé rédigé à la main.
+Compter deux à trois minutes par fichier. C'est bien moins que les dix à quinze minutes d'un feedback personnalisé rédigé à la main.
 
 ### 5. Traiter les cas sensibles hors du feedback
 

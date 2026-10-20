@@ -5,7 +5,7 @@
 import { svg, R, INK, MUTE, rect, text, tblock, path } from './lib.mjs';
 
 export const alt =
-	"Maquette d'un fichier de feedback : le texte de l'élève annoté, une ligne par critère, une réussite nommée et une priorité. Les annotations relient chaque partie aux trois questions du feedback efficace.";
+	"Maquette d'un fichier de feedback inventé, sans lien avec les copies de la classe : le texte de l'élève annoté, une ligne par critère, une réussite nommée et une priorité. Les annotations relient chaque partie aux trois questions du feedback efficace.";
 
 const RED = '#C62828';
 const GREY = '#8C8C8C';
@@ -62,10 +62,14 @@ export default function () {
 		['Lexique', '2/3', 'Simple et juste.'],
 		['Organisation', '1/2', 'Plus de connecteurs.'],
 	];
+	// Le fichier présente l'évaluation dans un tableau, une ligne par critère
+	b += rect(X - 8, 324, 476, rows.length * 25 + 4, { fill: 'none', stroke: '#CFCFCF', sw: 1.2, rx: 4 });
+	for (let i = 1; i < rows.length; i++) b += `<line x1="${X - 8}" y1="${326 + i * 25}" x2="${X + 468}" y2="${326 + i * 25}" stroke="#E2E2E2"/>`;
+	for (const vx of [442, 482]) b += `<line x1="${vx}" y1="324" x2="${vx}" y2="${328 + rows.length * 25}" stroke="#E2E2E2"/>`;
 	rows.forEach(([crit, note, com], i) => {
 		const y = 342 + i * 25;
 		b += text(X, y, crit, { weight: 600 });
-		b += text(452, y, note, { weight: 700 });
+		b += text(450, y, note, { weight: 700 });
 		b += text(492, y, com);
 	});
 	b += text(X, 502, 'Total : 11/20 (note bonus)', { weight: 700 });
@@ -90,7 +94,7 @@ export default function () {
 	b += bracket(722, 558, 582, 'right', INK);
 	b += callout(738, 562, 'start', 'Et ensuite ?', ['une seule priorité,', 'formulée comme', 'une action'], INK);
 
-	b += text(480, 634, 'Les trois questions du feedback efficace (Hattie et Timperley, 2007). Exemple entièrement fictif.', { fill: MUTE, anchor: 'middle' });
+	b += text(480, 634, "Exemple inventé, sans lien avec les copies de la classe. Questions d'après Hattie et Timperley (2007).", { fill: MUTE, anchor: 'middle' });
 
 	return svg({ w: W, h: H, title: "Anatomie d'un fichier de feedback", desc: alt, body: b });
 }

@@ -57,7 +57,7 @@ export default function () {
 	b += node(c[3], iaUp, BW, 74, 'conf', ['Note', 'confidentielle'], ["pour l'enseignant·e"], { fill: R.conf.f });
 	b += node(c[3], iaLow, BW, 74, 'ia', 'Fichier élève', ['projet de feedback']);
 	b += node(c[3], ensY, BW, 96, 'conf', ['Tranche les', 'cas sensibles'], ['entretien, réponse', 'humaine'], { fill: R.conf.f });
-	b += node(c[4], ensY, BW, 96, 'ens', ['Relit, ajuste', 'et valide'], ['des copies de', 'niveaux différents']);
+	b += node(c[4], ensY, BW, 96, 'ens', ['Relit, ajuste', 'et valide'], ['chaque fichier', 'avant envoi']);
 	b += node(c[5], ensY, 140, 96, 'ens', 'Envoie', ['le message', 'individuel']);
 	b += node(c[5], elY, 140, 100, 'el', ['Lit son', 'feedback'], ['Well done,', 'Next time']);
 
